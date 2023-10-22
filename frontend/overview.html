@@ -1,0 +1,44 @@
+{% extends 'common.html' %}
+
+
+{% block pagetitle %} Dashboard {% endblock %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{{css}}/dashboard.css"> {% endblock %}
+
+{% block dashboard-active %} class="active" {% endblock %}
+
+{% block pageheader %} Dashboard {% endblock %}
+
+{% block body %}
+<div class="maincontainer">
+    <div class="chargerstatus">
+        <div class="chargerstatus-title">Overview</div>
+        <div class="chargerstatus-caption">Here are key stats</div>
+        <div class="statusboxcontainer">
+            <div class="statusbox">
+                <div class="statusbox-title"><i id="offlinecharger-icon" class="uil uil-users-alt"></i>Total Students
+                </div>
+                <div class="statusbox-caption">Total number of Students</div>
+                <div id="stat_admins" class="statusbox-data">{{total_students}}</div>
+            </div>
+            <div class="statusbox" id="onlinechargers" data-href="/businesses/">
+                <div class="statusbox-title"><i id="onlinechargers-icon" class="uil uil-book-open"></i>Total
+                    Subjects</div>
+                <div class="statusbox-caption">Total number of Subjects available</div>
+                <div id="stat_businesses" class="statusbox-data">{{total_subjects}}</div>
+            </div>
+            <div class="statusbox">
+                <div class="statusbox-title">
+                    <i id="scheduled-icon" class="uil uil-user"></i>Total Marksheets
+                </div>
+                <div class="statusbox-caption">Total number of Marksheets in record</div>
+                <div id="stat_users" class="statusbox-data">{{total_records}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block pagejs %}
+<script src="{{js}}/overview.js" type="module"></script>
+{% endblock %}

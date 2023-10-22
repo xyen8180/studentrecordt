@@ -1,0 +1,92 @@
+<div id="studentModal" class="modalbg">
+    <form autocomplete="off" action="" method="post">{% csrf_token %}
+        <div class="chargermodal">
+            <div class="modalheadersection">
+                <div class="modalheader" id="cm-modalheader">Add Student</div>
+                <i class="uil uil-times closebutton" id="closeStudentModalBtn"></i>
+            </div>
+            <div class="modalbody" style="height: 400px;overflow: auto;">
+                <div class="chargerfirstrow">
+                    <div class="chargeridcontainer">
+                        <div class="modaltitle">Student Name</div>
+                        <input class="modaltextinput" type="text" name="cm-studentName" id="cm-studentName"
+                            placeholder="Enter Student Name" required>
+                    </div>
+                    <div class="modalnumbercontainer">
+                        <div class="modaltitle">Roll Number</div>
+                        <input class="modaltextinput" type="number" name="cm-student_roll" id="cm-student_roll"
+                            placeholder="Enter Roll Number" required>
+                    </div>
+                    <div class="chargerstypecontainer">
+                        <div class="modaltitle">Class</div>
+                        <div class="customselector" style="width:250px;">
+                            <select name="cm-class" id="cm-class" required>
+                                <option value="" disabled selected>Select Class</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="chargerthirdrow" style="margin-top: 16px;">
+                    <div class="modaltitle">Subjects</div>
+                    <div class="connectortable">
+                        <table>
+                            <tr>
+                                <th style="width: 16.67%;">Number</th>
+                                <th style="width: 33.34%;">Name</th>
+                                <th style="width: 33.34%;">Score</th>
+                                <th style="width: 16.67%;">Actions</th>
+                            </tr>
+                            <tbody id="add_connector_tbody">
+                                <tr>
+                                    <td name="cm-connector_id">1</td>
+                                    <td>
+                                        <input type="text" name="cm-connectortype" id="cm-connectortype" required>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="cm-connectoroutput" id="cm-connectoroutput"
+                                            pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
+                                            title="This should be a number or decimal">
+                                    </td>
+                                    <td><i onclick="delete_connector_row(event)" class="uil uil-trash-alt"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="add_new_connector_row">+Add New</div>
+                <div class="hrborder"></div>
+                <div style="display: flex;">
+                    <div class="bm-infocontainer" style="margin-top: 24px;">
+                        <div class="modaltitle">Photo</div>
+                        <input type="file" name="bm-org_logo" id="bm-org_logo" class="modaltextinput"
+                            onchange="previewFile()" required>
+                    </div>
+                    <div class="logo-viewer">
+                        <img src="" alt="" style="max-width: 200px;">
+                    </div>
+                </div>
+            </div>
+            <div class="modalfootersection">
+                <div id="cancelStudentModalBtn" class="cancelbtn secondary-button">
+                    Cancel</div>
+                <button type="submit" id="addupdatechargerbtn" class="addupdatebtn primary-button">Add
+                    Student</button>
+                <button type="submit" id="updatechargerbtn" class="addupdatebtn primary-button"
+                    style="display: none;border:0;">Update Student
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

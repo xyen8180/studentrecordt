@@ -1,0 +1,33 @@
+{% extends 'common.html' %}
+
+{% block pagetitle %} Students {% endblock %}
+
+{% block pagecss %}
+<link rel="stylesheet" href="{{css}}/students.css"> {% endblock %}
+
+{% block students-active %} class="active" {% endblock %}
+
+{% block pageheader %} Students {% endblock %}
+
+{% block body %}
+<div class="maincontainer">
+    <div class="filterrow">
+        <div class="searchcontainer">
+            <i class="uil uil-search"></i>
+            <input class="customsearchbox" type="text" name="search" id="customsearchbox" placeholder="Search">
+        </div>
+    </div>
+    {% include 'students_table.html' %}
+    <div class="loader">
+        <lottie-player src="{{img}}/loader.json" background=" transparent" speed="1"
+            style="width: 160px; height: 160px;" loop autoplay>
+        </lottie-player>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block pagejs %}
+{{ status_filter|json_script:"status_filter" }}
+<script src="{{js}}/students.js" type="module"></script>
+{% endblock %}

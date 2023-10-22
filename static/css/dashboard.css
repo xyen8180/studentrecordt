@@ -1,0 +1,3493 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F5F5F5;
+  z-index: 1000;
+  height: 100%;
+  display: flex;
+}
+.loader lottie-player {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
+.maincontainer {
+  position: relative;
+}
+
+.customradio {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid #212529;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.customradio:hover {
+  border: 2px solid #82C91E;
+}
+.customradio:checked {
+  border: 4px solid #82C91E;
+}
+
+.customselector {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+  background: #F8F9FA;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  height: 40px;
+  padding: 0px 12px;
+  width: 320px;
+}
+.customselector select {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+}
+.customselector select option {
+  color: #212529;
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  margin: 8px 0px;
+  text-transform: capitalize;
+}
+.customselector select option:disabled {
+  color: #868E96;
+}
+
+.customtoggle[type=checkbox] {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #a0aec0;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+.customtoggle[type=checkbox]::before {
+  content: "";
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  left: 0px;
+}
+.customtoggle[type=checkbox]:checked {
+  background-color: #4DABF7;
+}
+.customtoggle[type=checkbox]:checked::before {
+  left: 20px;
+}
+
+.mybtn {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.restart {
+  cursor: pointer;
+}
+
+.daytoggle {
+  background: #E9ECEF;
+  border: 1px solid #DEE2E6;
+  border-radius: 40px;
+  padding: 4px;
+  min-width: 214px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.daytoggle #today,
+.daytoggle #week,
+.daytoggle #month {
+  display: none;
+}
+.daytoggle #today-label,
+.daytoggle #week-label,
+.daytoggle #month-label {
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #212529;
+  padding: 17px, 8px;
+  display: flex;
+  width: 69px;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.daytoggle #today-label:hover,
+.daytoggle #week-label:hover,
+.daytoggle #month-label:hover {
+  color: #228BE6;
+}
+.daytoggle #today:checked + #today-label,
+.daytoggle #week:checked + #week-label,
+.daytoggle #month:checked + #month-label {
+  background-color: #fff;
+  padding: 8px 17px;
+  border-radius: 40px;
+  color: #228BE6;
+}
+
+.restart {
+  background: #A5D8FF;
+}
+.restart .uil-sync {
+  font-size: 1.5rem;
+  color: #1864AB;
+}
+
+.connector_filter {
+  background: #A5D8FF;
+  position: relative;
+}
+.connector_filter:hover {
+  background-color: #D0EBFF;
+}
+.connector_filter .uil-filter {
+  font-size: 1.5rem;
+  color: #1864AB;
+}
+
+.connector_filter_open {
+  background: #4DABF7;
+}
+.connector_filter_open:hover {
+  background: #4DABF7;
+}
+.connector_filter_open .uil-filter {
+  color: #E7F5FF;
+}
+
+.primary-button {
+  background-color: #4DABF7;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+.primary-button:hover {
+  background-color: #74C0FC;
+}
+.primary-button:active {
+  background-color: #228BE6;
+}
+.primary-button:focus-visible {
+  background-color: #4DABF7;
+  outline: #7950F2;
+}
+.primary-button:focus {
+  background-color: #4DABF7;
+}
+.primary-button:disabled {
+  background: #ADB5BD;
+}
+
+.secondary-button {
+  background-color: rgb(233, 236, 239);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.secondary-button:disabled {
+  background-color: rgb(233, 236, 239);
+}
+.secondary-button:hover {
+  background-color: rgb(248, 249, 250);
+}
+.secondary-button:active {
+  background-color: rgb(206, 212, 218);
+}
+.secondary-button:focus-visible {
+  background-color: rgb(233, 236, 239);
+  outline: #7950F2;
+}
+
+.poweredby {
+  position: fixed;
+  bottom: 0px;
+  right: 24px;
+  z-index: 10;
+  display: none;
+}
+
+.datepickers {
+  display: flex;
+  height: 40px;
+}
+.datepickers div {
+  position: relative;
+  z-index: 9;
+}
+.datepickers div input {
+  width: 136px;
+  height: 100%;
+  padding: 8px 12px;
+  background: #F8F9FA;
+  border: 1px solid #CED4DA;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+.datepickers div input::-moz-placeholder {
+  color: #868E96;
+}
+.datepickers div input::placeholder {
+  color: #868E96;
+}
+.datepickers div input:hover {
+  border: 1px solid #7950F2;
+}
+.datepickers div input:focus-visible {
+  outline: 0;
+  border: 1px solid #7950F2;
+}
+.datepickers div .uil-calender {
+  font-size: 20px;
+  position: absolute;
+  right: 12px;
+  top: 4px;
+  color: #868E96;
+}
+.datepickers div #fromdate {
+  border-radius: 8px 0px 0px 8px;
+}
+.datepickers div #todate {
+  border-radius: 0px 8px 8px 0px;
+}
+.datepickers .datearrow {
+  width: 40px;
+  height: 40px;
+  background: #E9ECEF;
+  border-width: 1px 0px;
+  border-style: solid;
+  border-color: #CED4DA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+.datepickers .datearrow .uil-arrow-right {
+  font-size: 24px;
+  color: #4DABF7;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.bodycontainer {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.navbar-container {
+  display: flex;
+  background-color: #212529;
+  width: 15%;
+  align-items: center;
+  flex-direction: column;
+  flex: 0 0 240px;
+}
+.navbar-container .mainnavbar {
+  display: flex;
+  background-color: #212529;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  padding: 1.5rem 0.75rem;
+}
+.navbar-container .mainnavbar .logonavmenucontainer {
+  height: 90%;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .logo {
+  display: flex;
+  justify-content: center;
+  height: 125px;
+  align-items: center;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .logo img {
+  max-height: 125px;
+  max-width: 200px;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 125px);
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul {
+  margin: 0px;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu .active {
+  color: #4DABF7;
+  background: #343A40;
+  border-right: 4px solid #4DABF7;
+  border-radius: 4px;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul li {
+  color: #fff;
+  list-style: none;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul li a {
+  text-decoration: none;
+  width: 216px;
+  height: 40px;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  color: #fff;
+  padding: 10px 14px;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul li a i {
+  font-size: 1.25rem;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul li a .navmenu-title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+.navbar-container .mainnavbar .logonavmenucontainer .navmenu ul li:hover {
+  background: #343A40;
+  border-radius: 4px;
+}
+.navbar-container .mainnavbar .profilecontainer {
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile {
+  background: #343A40;
+  display: flex;
+  border: 1px solid #868E96;
+  border-radius: 9px;
+  width: 100%;
+  height: 64px;
+  align-items: center;
+  position: absolute;
+  bottom: 0%;
+  cursor: pointer;
+  padding: 12px;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .profilepicture {
+  width: 21.5%;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .namecontainer {
+  width: 64%;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .namecontainer .brandname {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  width: 12ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .namecontainer .username {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-transform: capitalize;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .profilemenu {
+  color: white;
+  width: 10%;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown {
+  position: absolute;
+  width: 100%;
+  bottom: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 12px;
+  display: none;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .signoutcontainer,
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .updatepasswordcontainer {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .signoutcontainer i,
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .updatepasswordcontainer i {
+  color: #228BE6;
+  font-size: 1.5rem;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .signoutcontainer div,
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .updatepasswordcontainer div {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .signoutcontainer:hover,
+.navbar-container .mainnavbar .profilecontainer .navprofile .dropdown .updatepasswordcontainer:hover {
+  background-color: #E9ECEF;
+  border-radius: 4px;
+}
+.navbar-container .mainnavbar .profilecontainer .navprofile:hover {
+  border: 1px solid #4DABF7;
+}
+.navbar-container .mainnavbar .profilecontainer .clicked {
+  background-color: #212529;
+}
+
+.maincolumn {
+  width: 85%;
+  position: relative;
+}
+.maincolumn .headercontainer {
+  display: flex;
+  border-bottom: 1px solid #B8B8B8;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0px;
+  background-color: #fff;
+  z-index: 9;
+}
+.maincolumn .headercontainer .headerbackbutton {
+  font-size: 30px;
+}
+.maincolumn .headercontainer .headertitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #212529;
+}
+.maincolumn .headercontainer .ctabuttoncontainer {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .headerbtn {
+  border: 1.6px solid #CED4DA;
+  border-radius: 32px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications {
+  height: 40px;
+  width: 40px;
+  background-color: #A5D8FF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications svg path {
+  fill: #1864AB;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications:hover {
+  background-color: #D0EBFF;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationdot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #7950F2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: #fff 2px solid;
+  display: none;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 480px;
+  top: 68px;
+  right: 0;
+  background: #F5F5F5;
+  border: 1px solid #CED4DA;
+  box-shadow: 0px 10px 16px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  z-index: 100;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationheader {
+  width: 480px;
+  height: 80px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #CED4DA;
+  border-radius: 8px 8px 0px 0px;
+  padding: 1.5rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #212529;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody {
+  overflow: auto;
+  height: 50vh;
+  border-radius: 0 0 8px 8px;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationdayheading {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 2px;
+  color: #212529;
+  padding: 1rem 1.5rem;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer {
+  background: #FFFFFF;
+  border-top: 1px solid #CED4DA;
+  padding: 1rem;
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationicon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  flex: 0 0 32px;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationicon i {
+  font-size: 24px;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .nfwarning {
+  background-color: #FFF9DB;
+  color: #FAB005;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .nferror {
+  background-color: #FFF5F5;
+  color: #FA5252;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .nfsuccess {
+  background-color: #EBFBEE;
+  color: #40C057;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .nfinfo {
+  background-color: #E3FAFC;
+  color: #15AABF;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationcontents {
+  width: 100%;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationcontents .nfheadertimecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationcontents .nfheadertimecontainer .nfheader {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationcontents .nfheadertimecontainer .nftimeago {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #495057;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notifications .notificationlistcontainer .notificationbody .notificationcontainer .notificationcontents .nfmessage {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #495057;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notification-open {
+  background-color: #4DABF7;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notification-open:hover {
+  background-color: #4DABF7;
+}
+.maincolumn .headercontainer .ctabuttoncontainer .notification-open svg path {
+  fill: #fff;
+}
+
+.modalbg {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+.modalbg form {
+  width: 50%;
+}
+.modalbg .chargermodal,
+.modalbg .locationmodal,
+.modalbg .offer-modal,
+.modalbg .usermodal,
+.modalbg .businessmodal,
+.modalbg .updatepasswordmodal,
+.modalbg .resetpasswordmodal,
+.modalbg .deletecharger,
+.modalbg .deleterfid,
+.modalbg .deleteadmin,
+.modalbg .deletebusinessadmin,
+.modalbg .deleteorg,
+.modalbg .businessadminmodal,
+.modalbg .rfidmodal,
+.modalbg .pricemodal,
+.modalbg .UserPriceModal {
+  background: #F5F5F5;
+  border-radius: 8px;
+  min-width: 640px;
+}
+.modalbg .chargermodal .modalheadersection,
+.modalbg .locationmodal .modalheadersection,
+.modalbg .offer-modal .modalheadersection,
+.modalbg .usermodal .modalheadersection,
+.modalbg .businessmodal .modalheadersection,
+.modalbg .updatepasswordmodal .modalheadersection,
+.modalbg .resetpasswordmodal .modalheadersection,
+.modalbg .deletecharger .modalheadersection,
+.modalbg .deleterfid .modalheadersection,
+.modalbg .deleteadmin .modalheadersection,
+.modalbg .deletebusinessadmin .modalheadersection,
+.modalbg .deleteorg .modalheadersection,
+.modalbg .businessadminmodal .modalheadersection,
+.modalbg .rfidmodal .modalheadersection,
+.modalbg .pricemodal .modalheadersection,
+.modalbg .UserPriceModal .modalheadersection {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 1px solid #CED4DA;
+}
+.modalbg .chargermodal .modalheadersection .modalheader,
+.modalbg .locationmodal .modalheadersection .modalheader,
+.modalbg .offer-modal .modalheadersection .modalheader,
+.modalbg .usermodal .modalheadersection .modalheader,
+.modalbg .businessmodal .modalheadersection .modalheader,
+.modalbg .updatepasswordmodal .modalheadersection .modalheader,
+.modalbg .resetpasswordmodal .modalheadersection .modalheader,
+.modalbg .deletecharger .modalheadersection .modalheader,
+.modalbg .deleterfid .modalheadersection .modalheader,
+.modalbg .deleteadmin .modalheadersection .modalheader,
+.modalbg .deletebusinessadmin .modalheadersection .modalheader,
+.modalbg .deleteorg .modalheadersection .modalheader,
+.modalbg .businessadminmodal .modalheadersection .modalheader,
+.modalbg .rfidmodal .modalheadersection .modalheader,
+.modalbg .pricemodal .modalheadersection .modalheader,
+.modalbg .UserPriceModal .modalheadersection .modalheader {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #212529;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.modalbg .chargermodal .modalheadersection .closebutton,
+.modalbg .locationmodal .modalheadersection .closebutton,
+.modalbg .offer-modal .modalheadersection .closebutton,
+.modalbg .usermodal .modalheadersection .closebutton,
+.modalbg .businessmodal .modalheadersection .closebutton,
+.modalbg .updatepasswordmodal .modalheadersection .closebutton,
+.modalbg .resetpasswordmodal .modalheadersection .closebutton,
+.modalbg .deletecharger .modalheadersection .closebutton,
+.modalbg .deleterfid .modalheadersection .closebutton,
+.modalbg .deleteadmin .modalheadersection .closebutton,
+.modalbg .deletebusinessadmin .modalheadersection .closebutton,
+.modalbg .deleteorg .modalheadersection .closebutton,
+.modalbg .businessadminmodal .modalheadersection .closebutton,
+.modalbg .rfidmodal .modalheadersection .closebutton,
+.modalbg .pricemodal .modalheadersection .closebutton,
+.modalbg .UserPriceModal .modalheadersection .closebutton {
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.modalbg .chargermodal .modalbody,
+.modalbg .locationmodal .modalbody,
+.modalbg .offer-modal .modalbody,
+.modalbg .usermodal .modalbody,
+.modalbg .businessmodal .modalbody,
+.modalbg .updatepasswordmodal .modalbody,
+.modalbg .resetpasswordmodal .modalbody,
+.modalbg .deletecharger .modalbody,
+.modalbg .deleterfid .modalbody,
+.modalbg .deleteadmin .modalbody,
+.modalbg .deletebusinessadmin .modalbody,
+.modalbg .deleteorg .modalbody,
+.modalbg .businessadminmodal .modalbody,
+.modalbg .rfidmodal .modalbody,
+.modalbg .pricemodal .modalbody,
+.modalbg .UserPriceModal .modalbody {
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.modalbg .chargermodal .modalbody .chargerfirstrow,
+.modalbg .chargermodal .modalbody .chargersecondrow,
+.modalbg .chargermodal .modalbody .businessadminfirstrow,
+.modalbg .locationmodal .modalbody .chargerfirstrow,
+.modalbg .locationmodal .modalbody .chargersecondrow,
+.modalbg .locationmodal .modalbody .businessadminfirstrow,
+.modalbg .offer-modal .modalbody .chargerfirstrow,
+.modalbg .offer-modal .modalbody .chargersecondrow,
+.modalbg .offer-modal .modalbody .businessadminfirstrow,
+.modalbg .usermodal .modalbody .chargerfirstrow,
+.modalbg .usermodal .modalbody .chargersecondrow,
+.modalbg .usermodal .modalbody .businessadminfirstrow,
+.modalbg .businessmodal .modalbody .chargerfirstrow,
+.modalbg .businessmodal .modalbody .chargersecondrow,
+.modalbg .businessmodal .modalbody .businessadminfirstrow,
+.modalbg .updatepasswordmodal .modalbody .chargerfirstrow,
+.modalbg .updatepasswordmodal .modalbody .chargersecondrow,
+.modalbg .updatepasswordmodal .modalbody .businessadminfirstrow,
+.modalbg .resetpasswordmodal .modalbody .chargerfirstrow,
+.modalbg .resetpasswordmodal .modalbody .chargersecondrow,
+.modalbg .resetpasswordmodal .modalbody .businessadminfirstrow,
+.modalbg .deletecharger .modalbody .chargerfirstrow,
+.modalbg .deletecharger .modalbody .chargersecondrow,
+.modalbg .deletecharger .modalbody .businessadminfirstrow,
+.modalbg .deleterfid .modalbody .chargerfirstrow,
+.modalbg .deleterfid .modalbody .chargersecondrow,
+.modalbg .deleterfid .modalbody .businessadminfirstrow,
+.modalbg .deleteadmin .modalbody .chargerfirstrow,
+.modalbg .deleteadmin .modalbody .chargersecondrow,
+.modalbg .deleteadmin .modalbody .businessadminfirstrow,
+.modalbg .deletebusinessadmin .modalbody .chargerfirstrow,
+.modalbg .deletebusinessadmin .modalbody .chargersecondrow,
+.modalbg .deletebusinessadmin .modalbody .businessadminfirstrow,
+.modalbg .deleteorg .modalbody .chargerfirstrow,
+.modalbg .deleteorg .modalbody .chargersecondrow,
+.modalbg .deleteorg .modalbody .businessadminfirstrow,
+.modalbg .businessadminmodal .modalbody .chargerfirstrow,
+.modalbg .businessadminmodal .modalbody .chargersecondrow,
+.modalbg .businessadminmodal .modalbody .businessadminfirstrow,
+.modalbg .rfidmodal .modalbody .chargerfirstrow,
+.modalbg .rfidmodal .modalbody .chargersecondrow,
+.modalbg .rfidmodal .modalbody .businessadminfirstrow,
+.modalbg .pricemodal .modalbody .chargerfirstrow,
+.modalbg .pricemodal .modalbody .chargersecondrow,
+.modalbg .pricemodal .modalbody .businessadminfirstrow,
+.modalbg .UserPriceModal .modalbody .chargerfirstrow,
+.modalbg .UserPriceModal .modalbody .chargersecondrow,
+.modalbg .UserPriceModal .modalbody .businessadminfirstrow {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.modalbg .chargermodal .modalbody .chargersecondrow,
+.modalbg .locationmodal .modalbody .chargersecondrow,
+.modalbg .offer-modal .modalbody .chargersecondrow,
+.modalbg .usermodal .modalbody .chargersecondrow,
+.modalbg .businessmodal .modalbody .chargersecondrow,
+.modalbg .updatepasswordmodal .modalbody .chargersecondrow,
+.modalbg .resetpasswordmodal .modalbody .chargersecondrow,
+.modalbg .deletecharger .modalbody .chargersecondrow,
+.modalbg .deleterfid .modalbody .chargersecondrow,
+.modalbg .deleteadmin .modalbody .chargersecondrow,
+.modalbg .deletebusinessadmin .modalbody .chargersecondrow,
+.modalbg .deleteorg .modalbody .chargersecondrow,
+.modalbg .businessadminmodal .modalbody .chargersecondrow,
+.modalbg .rfidmodal .modalbody .chargersecondrow,
+.modalbg .pricemodal .modalbody .chargersecondrow,
+.modalbg .UserPriceModal .modalbody .chargersecondrow {
+  margin: 1.5rem 0;
+}
+.modalbg .chargermodal .modalbody .chargerthirdrow,
+.modalbg .chargermodal .modalbody .businessadminbusiness,
+.modalbg .locationmodal .modalbody .chargerthirdrow,
+.modalbg .locationmodal .modalbody .businessadminbusiness,
+.modalbg .offer-modal .modalbody .chargerthirdrow,
+.modalbg .offer-modal .modalbody .businessadminbusiness,
+.modalbg .usermodal .modalbody .chargerthirdrow,
+.modalbg .usermodal .modalbody .businessadminbusiness,
+.modalbg .businessmodal .modalbody .chargerthirdrow,
+.modalbg .businessmodal .modalbody .businessadminbusiness,
+.modalbg .updatepasswordmodal .modalbody .chargerthirdrow,
+.modalbg .updatepasswordmodal .modalbody .businessadminbusiness,
+.modalbg .resetpasswordmodal .modalbody .chargerthirdrow,
+.modalbg .resetpasswordmodal .modalbody .businessadminbusiness,
+.modalbg .deletecharger .modalbody .chargerthirdrow,
+.modalbg .deletecharger .modalbody .businessadminbusiness,
+.modalbg .deleterfid .modalbody .chargerthirdrow,
+.modalbg .deleterfid .modalbody .businessadminbusiness,
+.modalbg .deleteadmin .modalbody .chargerthirdrow,
+.modalbg .deleteadmin .modalbody .businessadminbusiness,
+.modalbg .deletebusinessadmin .modalbody .chargerthirdrow,
+.modalbg .deletebusinessadmin .modalbody .businessadminbusiness,
+.modalbg .deleteorg .modalbody .chargerthirdrow,
+.modalbg .deleteorg .modalbody .businessadminbusiness,
+.modalbg .businessadminmodal .modalbody .chargerthirdrow,
+.modalbg .businessadminmodal .modalbody .businessadminbusiness,
+.modalbg .rfidmodal .modalbody .chargerthirdrow,
+.modalbg .rfidmodal .modalbody .businessadminbusiness,
+.modalbg .pricemodal .modalbody .chargerthirdrow,
+.modalbg .pricemodal .modalbody .businessadminbusiness,
+.modalbg .UserPriceModal .modalbody .chargerthirdrow,
+.modalbg .UserPriceModal .modalbody .businessadminbusiness {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.modalbg .chargermodal .modalbody .usernamecontainer,
+.modalbg .chargermodal .modalbody .firstnamecontainer,
+.modalbg .chargermodal .modalbody .lastnamecontainer,
+.modalbg .chargermodal .modalbody .adminemailcontainer,
+.modalbg .chargermodal .modalbody .adminpasswordcontainer,
+.modalbg .chargermodal .modalbody .adminisactivecontainer,
+.modalbg .chargermodal .modalbody .businesscontainer,
+.modalbg .locationmodal .modalbody .usernamecontainer,
+.modalbg .locationmodal .modalbody .firstnamecontainer,
+.modalbg .locationmodal .modalbody .lastnamecontainer,
+.modalbg .locationmodal .modalbody .adminemailcontainer,
+.modalbg .locationmodal .modalbody .adminpasswordcontainer,
+.modalbg .locationmodal .modalbody .adminisactivecontainer,
+.modalbg .locationmodal .modalbody .businesscontainer,
+.modalbg .offer-modal .modalbody .usernamecontainer,
+.modalbg .offer-modal .modalbody .firstnamecontainer,
+.modalbg .offer-modal .modalbody .lastnamecontainer,
+.modalbg .offer-modal .modalbody .adminemailcontainer,
+.modalbg .offer-modal .modalbody .adminpasswordcontainer,
+.modalbg .offer-modal .modalbody .adminisactivecontainer,
+.modalbg .offer-modal .modalbody .businesscontainer,
+.modalbg .usermodal .modalbody .usernamecontainer,
+.modalbg .usermodal .modalbody .firstnamecontainer,
+.modalbg .usermodal .modalbody .lastnamecontainer,
+.modalbg .usermodal .modalbody .adminemailcontainer,
+.modalbg .usermodal .modalbody .adminpasswordcontainer,
+.modalbg .usermodal .modalbody .adminisactivecontainer,
+.modalbg .usermodal .modalbody .businesscontainer,
+.modalbg .businessmodal .modalbody .usernamecontainer,
+.modalbg .businessmodal .modalbody .firstnamecontainer,
+.modalbg .businessmodal .modalbody .lastnamecontainer,
+.modalbg .businessmodal .modalbody .adminemailcontainer,
+.modalbg .businessmodal .modalbody .adminpasswordcontainer,
+.modalbg .businessmodal .modalbody .adminisactivecontainer,
+.modalbg .businessmodal .modalbody .businesscontainer,
+.modalbg .updatepasswordmodal .modalbody .usernamecontainer,
+.modalbg .updatepasswordmodal .modalbody .firstnamecontainer,
+.modalbg .updatepasswordmodal .modalbody .lastnamecontainer,
+.modalbg .updatepasswordmodal .modalbody .adminemailcontainer,
+.modalbg .updatepasswordmodal .modalbody .adminpasswordcontainer,
+.modalbg .updatepasswordmodal .modalbody .adminisactivecontainer,
+.modalbg .updatepasswordmodal .modalbody .businesscontainer,
+.modalbg .resetpasswordmodal .modalbody .usernamecontainer,
+.modalbg .resetpasswordmodal .modalbody .firstnamecontainer,
+.modalbg .resetpasswordmodal .modalbody .lastnamecontainer,
+.modalbg .resetpasswordmodal .modalbody .adminemailcontainer,
+.modalbg .resetpasswordmodal .modalbody .adminpasswordcontainer,
+.modalbg .resetpasswordmodal .modalbody .adminisactivecontainer,
+.modalbg .resetpasswordmodal .modalbody .businesscontainer,
+.modalbg .deletecharger .modalbody .usernamecontainer,
+.modalbg .deletecharger .modalbody .firstnamecontainer,
+.modalbg .deletecharger .modalbody .lastnamecontainer,
+.modalbg .deletecharger .modalbody .adminemailcontainer,
+.modalbg .deletecharger .modalbody .adminpasswordcontainer,
+.modalbg .deletecharger .modalbody .adminisactivecontainer,
+.modalbg .deletecharger .modalbody .businesscontainer,
+.modalbg .deleterfid .modalbody .usernamecontainer,
+.modalbg .deleterfid .modalbody .firstnamecontainer,
+.modalbg .deleterfid .modalbody .lastnamecontainer,
+.modalbg .deleterfid .modalbody .adminemailcontainer,
+.modalbg .deleterfid .modalbody .adminpasswordcontainer,
+.modalbg .deleterfid .modalbody .adminisactivecontainer,
+.modalbg .deleterfid .modalbody .businesscontainer,
+.modalbg .deleteadmin .modalbody .usernamecontainer,
+.modalbg .deleteadmin .modalbody .firstnamecontainer,
+.modalbg .deleteadmin .modalbody .lastnamecontainer,
+.modalbg .deleteadmin .modalbody .adminemailcontainer,
+.modalbg .deleteadmin .modalbody .adminpasswordcontainer,
+.modalbg .deleteadmin .modalbody .adminisactivecontainer,
+.modalbg .deleteadmin .modalbody .businesscontainer,
+.modalbg .deletebusinessadmin .modalbody .usernamecontainer,
+.modalbg .deletebusinessadmin .modalbody .firstnamecontainer,
+.modalbg .deletebusinessadmin .modalbody .lastnamecontainer,
+.modalbg .deletebusinessadmin .modalbody .adminemailcontainer,
+.modalbg .deletebusinessadmin .modalbody .adminpasswordcontainer,
+.modalbg .deletebusinessadmin .modalbody .adminisactivecontainer,
+.modalbg .deletebusinessadmin .modalbody .businesscontainer,
+.modalbg .deleteorg .modalbody .usernamecontainer,
+.modalbg .deleteorg .modalbody .firstnamecontainer,
+.modalbg .deleteorg .modalbody .lastnamecontainer,
+.modalbg .deleteorg .modalbody .adminemailcontainer,
+.modalbg .deleteorg .modalbody .adminpasswordcontainer,
+.modalbg .deleteorg .modalbody .adminisactivecontainer,
+.modalbg .deleteorg .modalbody .businesscontainer,
+.modalbg .businessadminmodal .modalbody .usernamecontainer,
+.modalbg .businessadminmodal .modalbody .firstnamecontainer,
+.modalbg .businessadminmodal .modalbody .lastnamecontainer,
+.modalbg .businessadminmodal .modalbody .adminemailcontainer,
+.modalbg .businessadminmodal .modalbody .adminpasswordcontainer,
+.modalbg .businessadminmodal .modalbody .adminisactivecontainer,
+.modalbg .businessadminmodal .modalbody .businesscontainer,
+.modalbg .rfidmodal .modalbody .usernamecontainer,
+.modalbg .rfidmodal .modalbody .firstnamecontainer,
+.modalbg .rfidmodal .modalbody .lastnamecontainer,
+.modalbg .rfidmodal .modalbody .adminemailcontainer,
+.modalbg .rfidmodal .modalbody .adminpasswordcontainer,
+.modalbg .rfidmodal .modalbody .adminisactivecontainer,
+.modalbg .rfidmodal .modalbody .businesscontainer,
+.modalbg .pricemodal .modalbody .usernamecontainer,
+.modalbg .pricemodal .modalbody .firstnamecontainer,
+.modalbg .pricemodal .modalbody .lastnamecontainer,
+.modalbg .pricemodal .modalbody .adminemailcontainer,
+.modalbg .pricemodal .modalbody .adminpasswordcontainer,
+.modalbg .pricemodal .modalbody .adminisactivecontainer,
+.modalbg .pricemodal .modalbody .businesscontainer,
+.modalbg .UserPriceModal .modalbody .usernamecontainer,
+.modalbg .UserPriceModal .modalbody .firstnamecontainer,
+.modalbg .UserPriceModal .modalbody .lastnamecontainer,
+.modalbg .UserPriceModal .modalbody .adminemailcontainer,
+.modalbg .UserPriceModal .modalbody .adminpasswordcontainer,
+.modalbg .UserPriceModal .modalbody .adminisactivecontainer,
+.modalbg .UserPriceModal .modalbody .businesscontainer {
+  display: flex;
+  row-gap: 0.5rem;
+  flex-direction: column;
+}
+.modalbg .chargermodal .modalbody .businesscontainer,
+.modalbg .locationmodal .modalbody .businesscontainer,
+.modalbg .offer-modal .modalbody .businesscontainer,
+.modalbg .usermodal .modalbody .businesscontainer,
+.modalbg .businessmodal .modalbody .businesscontainer,
+.modalbg .updatepasswordmodal .modalbody .businesscontainer,
+.modalbg .resetpasswordmodal .modalbody .businesscontainer,
+.modalbg .deletecharger .modalbody .businesscontainer,
+.modalbg .deleterfid .modalbody .businesscontainer,
+.modalbg .deleteadmin .modalbody .businesscontainer,
+.modalbg .deletebusinessadmin .modalbody .businesscontainer,
+.modalbg .deleteorg .modalbody .businesscontainer,
+.modalbg .businessadminmodal .modalbody .businesscontainer,
+.modalbg .rfidmodal .modalbody .businesscontainer,
+.modalbg .pricemodal .modalbody .businesscontainer,
+.modalbg .UserPriceModal .modalbody .businesscontainer {
+  width: 50%;
+}
+.modalbg .chargermodal .modalbody #add_new_connector_row,
+.modalbg .chargermodal .modalbody #add_new_charger_row,
+.modalbg .locationmodal .modalbody #add_new_connector_row,
+.modalbg .locationmodal .modalbody #add_new_charger_row,
+.modalbg .offer-modal .modalbody #add_new_connector_row,
+.modalbg .offer-modal .modalbody #add_new_charger_row,
+.modalbg .usermodal .modalbody #add_new_connector_row,
+.modalbg .usermodal .modalbody #add_new_charger_row,
+.modalbg .businessmodal .modalbody #add_new_connector_row,
+.modalbg .businessmodal .modalbody #add_new_charger_row,
+.modalbg .updatepasswordmodal .modalbody #add_new_connector_row,
+.modalbg .updatepasswordmodal .modalbody #add_new_charger_row,
+.modalbg .resetpasswordmodal .modalbody #add_new_connector_row,
+.modalbg .resetpasswordmodal .modalbody #add_new_charger_row,
+.modalbg .deletecharger .modalbody #add_new_connector_row,
+.modalbg .deletecharger .modalbody #add_new_charger_row,
+.modalbg .deleterfid .modalbody #add_new_connector_row,
+.modalbg .deleterfid .modalbody #add_new_charger_row,
+.modalbg .deleteadmin .modalbody #add_new_connector_row,
+.modalbg .deleteadmin .modalbody #add_new_charger_row,
+.modalbg .deletebusinessadmin .modalbody #add_new_connector_row,
+.modalbg .deletebusinessadmin .modalbody #add_new_charger_row,
+.modalbg .deleteorg .modalbody #add_new_connector_row,
+.modalbg .deleteorg .modalbody #add_new_charger_row,
+.modalbg .businessadminmodal .modalbody #add_new_connector_row,
+.modalbg .businessadminmodal .modalbody #add_new_charger_row,
+.modalbg .rfidmodal .modalbody #add_new_connector_row,
+.modalbg .rfidmodal .modalbody #add_new_charger_row,
+.modalbg .pricemodal .modalbody #add_new_connector_row,
+.modalbg .pricemodal .modalbody #add_new_charger_row,
+.modalbg .UserPriceModal .modalbody #add_new_connector_row,
+.modalbg .UserPriceModal .modalbody #add_new_charger_row {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #228BE6;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.modalbg .chargermodal .modalbody .chargerfourthrow,
+.modalbg .locationmodal .modalbody .chargerfourthrow,
+.modalbg .offer-modal .modalbody .chargerfourthrow,
+.modalbg .usermodal .modalbody .chargerfourthrow,
+.modalbg .businessmodal .modalbody .chargerfourthrow,
+.modalbg .updatepasswordmodal .modalbody .chargerfourthrow,
+.modalbg .resetpasswordmodal .modalbody .chargerfourthrow,
+.modalbg .deletecharger .modalbody .chargerfourthrow,
+.modalbg .deleterfid .modalbody .chargerfourthrow,
+.modalbg .deleteadmin .modalbody .chargerfourthrow,
+.modalbg .deletebusinessadmin .modalbody .chargerfourthrow,
+.modalbg .deleteorg .modalbody .chargerfourthrow,
+.modalbg .businessadminmodal .modalbody .chargerfourthrow,
+.modalbg .rfidmodal .modalbody .chargerfourthrow,
+.modalbg .pricemodal .modalbody .chargerfourthrow,
+.modalbg .UserPriceModal .modalbody .chargerfourthrow {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  margin-top: 1.5rem;
+}
+.modalbg .chargermodal .modalbody .locationfirstrow,
+.modalbg .chargermodal .modalbody .offerModalFirstModal,
+.modalbg .chargermodal .modalbody .updatepasswordrow,
+.modalbg .chargermodal .modalbody .resetpasswordrow,
+.modalbg .locationmodal .modalbody .locationfirstrow,
+.modalbg .locationmodal .modalbody .offerModalFirstModal,
+.modalbg .locationmodal .modalbody .updatepasswordrow,
+.modalbg .locationmodal .modalbody .resetpasswordrow,
+.modalbg .offer-modal .modalbody .locationfirstrow,
+.modalbg .offer-modal .modalbody .offerModalFirstModal,
+.modalbg .offer-modal .modalbody .updatepasswordrow,
+.modalbg .offer-modal .modalbody .resetpasswordrow,
+.modalbg .usermodal .modalbody .locationfirstrow,
+.modalbg .usermodal .modalbody .offerModalFirstModal,
+.modalbg .usermodal .modalbody .updatepasswordrow,
+.modalbg .usermodal .modalbody .resetpasswordrow,
+.modalbg .businessmodal .modalbody .locationfirstrow,
+.modalbg .businessmodal .modalbody .offerModalFirstModal,
+.modalbg .businessmodal .modalbody .updatepasswordrow,
+.modalbg .businessmodal .modalbody .resetpasswordrow,
+.modalbg .updatepasswordmodal .modalbody .locationfirstrow,
+.modalbg .updatepasswordmodal .modalbody .offerModalFirstModal,
+.modalbg .updatepasswordmodal .modalbody .updatepasswordrow,
+.modalbg .updatepasswordmodal .modalbody .resetpasswordrow,
+.modalbg .resetpasswordmodal .modalbody .locationfirstrow,
+.modalbg .resetpasswordmodal .modalbody .offerModalFirstModal,
+.modalbg .resetpasswordmodal .modalbody .updatepasswordrow,
+.modalbg .resetpasswordmodal .modalbody .resetpasswordrow,
+.modalbg .deletecharger .modalbody .locationfirstrow,
+.modalbg .deletecharger .modalbody .offerModalFirstModal,
+.modalbg .deletecharger .modalbody .updatepasswordrow,
+.modalbg .deletecharger .modalbody .resetpasswordrow,
+.modalbg .deleterfid .modalbody .locationfirstrow,
+.modalbg .deleterfid .modalbody .offerModalFirstModal,
+.modalbg .deleterfid .modalbody .updatepasswordrow,
+.modalbg .deleterfid .modalbody .resetpasswordrow,
+.modalbg .deleteadmin .modalbody .locationfirstrow,
+.modalbg .deleteadmin .modalbody .offerModalFirstModal,
+.modalbg .deleteadmin .modalbody .updatepasswordrow,
+.modalbg .deleteadmin .modalbody .resetpasswordrow,
+.modalbg .deletebusinessadmin .modalbody .locationfirstrow,
+.modalbg .deletebusinessadmin .modalbody .offerModalFirstModal,
+.modalbg .deletebusinessadmin .modalbody .updatepasswordrow,
+.modalbg .deletebusinessadmin .modalbody .resetpasswordrow,
+.modalbg .deleteorg .modalbody .locationfirstrow,
+.modalbg .deleteorg .modalbody .offerModalFirstModal,
+.modalbg .deleteorg .modalbody .updatepasswordrow,
+.modalbg .deleteorg .modalbody .resetpasswordrow,
+.modalbg .businessadminmodal .modalbody .locationfirstrow,
+.modalbg .businessadminmodal .modalbody .offerModalFirstModal,
+.modalbg .businessadminmodal .modalbody .updatepasswordrow,
+.modalbg .businessadminmodal .modalbody .resetpasswordrow,
+.modalbg .rfidmodal .modalbody .locationfirstrow,
+.modalbg .rfidmodal .modalbody .offerModalFirstModal,
+.modalbg .rfidmodal .modalbody .updatepasswordrow,
+.modalbg .rfidmodal .modalbody .resetpasswordrow,
+.modalbg .pricemodal .modalbody .locationfirstrow,
+.modalbg .pricemodal .modalbody .offerModalFirstModal,
+.modalbg .pricemodal .modalbody .updatepasswordrow,
+.modalbg .pricemodal .modalbody .resetpasswordrow,
+.modalbg .UserPriceModal .modalbody .locationfirstrow,
+.modalbg .UserPriceModal .modalbody .offerModalFirstModal,
+.modalbg .UserPriceModal .modalbody .updatepasswordrow,
+.modalbg .UserPriceModal .modalbody .resetpasswordrow {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.modalbg .chargermodal .modalbody .flex-row,
+.modalbg .locationmodal .modalbody .flex-row,
+.modalbg .offer-modal .modalbody .flex-row,
+.modalbg .usermodal .modalbody .flex-row,
+.modalbg .businessmodal .modalbody .flex-row,
+.modalbg .updatepasswordmodal .modalbody .flex-row,
+.modalbg .resetpasswordmodal .modalbody .flex-row,
+.modalbg .deletecharger .modalbody .flex-row,
+.modalbg .deleterfid .modalbody .flex-row,
+.modalbg .deleteadmin .modalbody .flex-row,
+.modalbg .deletebusinessadmin .modalbody .flex-row,
+.modalbg .deleteorg .modalbody .flex-row,
+.modalbg .businessadminmodal .modalbody .flex-row,
+.modalbg .rfidmodal .modalbody .flex-row,
+.modalbg .pricemodal .modalbody .flex-row,
+.modalbg .UserPriceModal .modalbody .flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.modalbg .chargermodal .modalbody .couponCheckBoxContainer,
+.modalbg .locationmodal .modalbody .couponCheckBoxContainer,
+.modalbg .offer-modal .modalbody .couponCheckBoxContainer,
+.modalbg .usermodal .modalbody .couponCheckBoxContainer,
+.modalbg .businessmodal .modalbody .couponCheckBoxContainer,
+.modalbg .updatepasswordmodal .modalbody .couponCheckBoxContainer,
+.modalbg .resetpasswordmodal .modalbody .couponCheckBoxContainer,
+.modalbg .deletecharger .modalbody .couponCheckBoxContainer,
+.modalbg .deleterfid .modalbody .couponCheckBoxContainer,
+.modalbg .deleteadmin .modalbody .couponCheckBoxContainer,
+.modalbg .deletebusinessadmin .modalbody .couponCheckBoxContainer,
+.modalbg .deleteorg .modalbody .couponCheckBoxContainer,
+.modalbg .businessadminmodal .modalbody .couponCheckBoxContainer,
+.modalbg .rfidmodal .modalbody .couponCheckBoxContainer,
+.modalbg .pricemodal .modalbody .couponCheckBoxContainer,
+.modalbg .UserPriceModal .modalbody .couponCheckBoxContainer {
+  gap: 8px;
+  margin-top: 8px;
+}
+.modalbg .chargermodal .modalbody .updatepasswordrow,
+.modalbg .locationmodal .modalbody .updatepasswordrow,
+.modalbg .offer-modal .modalbody .updatepasswordrow,
+.modalbg .usermodal .modalbody .updatepasswordrow,
+.modalbg .businessmodal .modalbody .updatepasswordrow,
+.modalbg .updatepasswordmodal .modalbody .updatepasswordrow,
+.modalbg .resetpasswordmodal .modalbody .updatepasswordrow,
+.modalbg .deletecharger .modalbody .updatepasswordrow,
+.modalbg .deleterfid .modalbody .updatepasswordrow,
+.modalbg .deleteadmin .modalbody .updatepasswordrow,
+.modalbg .deletebusinessadmin .modalbody .updatepasswordrow,
+.modalbg .deleteorg .modalbody .updatepasswordrow,
+.modalbg .businessadminmodal .modalbody .updatepasswordrow,
+.modalbg .rfidmodal .modalbody .updatepasswordrow,
+.modalbg .pricemodal .modalbody .updatepasswordrow,
+.modalbg .UserPriceModal .modalbody .updatepasswordrow {
+  margin-bottom: 1.5rem;
+}
+.modalbg .chargermodal .modalbody .updatepasswordrow:last-child,
+.modalbg .locationmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .offer-modal .modalbody .updatepasswordrow:last-child,
+.modalbg .usermodal .modalbody .updatepasswordrow:last-child,
+.modalbg .businessmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .updatepasswordmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .resetpasswordmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .deletecharger .modalbody .updatepasswordrow:last-child,
+.modalbg .deleterfid .modalbody .updatepasswordrow:last-child,
+.modalbg .deleteadmin .modalbody .updatepasswordrow:last-child,
+.modalbg .deletebusinessadmin .modalbody .updatepasswordrow:last-child,
+.modalbg .deleteorg .modalbody .updatepasswordrow:last-child,
+.modalbg .businessadminmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .rfidmodal .modalbody .updatepasswordrow:last-child,
+.modalbg .pricemodal .modalbody .updatepasswordrow:last-child,
+.modalbg .UserPriceModal .modalbody .updatepasswordrow:last-child {
+  margin-bottom: 0;
+}
+.modalbg .chargermodal .modalbody .locationsecondrow,
+.modalbg .chargermodal .modalbody .bm-row,
+.modalbg .locationmodal .modalbody .locationsecondrow,
+.modalbg .locationmodal .modalbody .bm-row,
+.modalbg .offer-modal .modalbody .locationsecondrow,
+.modalbg .offer-modal .modalbody .bm-row,
+.modalbg .usermodal .modalbody .locationsecondrow,
+.modalbg .usermodal .modalbody .bm-row,
+.modalbg .businessmodal .modalbody .locationsecondrow,
+.modalbg .businessmodal .modalbody .bm-row,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow,
+.modalbg .updatepasswordmodal .modalbody .bm-row,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow,
+.modalbg .resetpasswordmodal .modalbody .bm-row,
+.modalbg .deletecharger .modalbody .locationsecondrow,
+.modalbg .deletecharger .modalbody .bm-row,
+.modalbg .deleterfid .modalbody .locationsecondrow,
+.modalbg .deleterfid .modalbody .bm-row,
+.modalbg .deleteadmin .modalbody .locationsecondrow,
+.modalbg .deleteadmin .modalbody .bm-row,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow,
+.modalbg .deletebusinessadmin .modalbody .bm-row,
+.modalbg .deleteorg .modalbody .locationsecondrow,
+.modalbg .deleteorg .modalbody .bm-row,
+.modalbg .businessadminmodal .modalbody .locationsecondrow,
+.modalbg .businessadminmodal .modalbody .bm-row,
+.modalbg .rfidmodal .modalbody .locationsecondrow,
+.modalbg .rfidmodal .modalbody .bm-row,
+.modalbg .pricemodal .modalbody .locationsecondrow,
+.modalbg .pricemodal .modalbody .bm-row,
+.modalbg .UserPriceModal .modalbody .locationsecondrow,
+.modalbg .UserPriceModal .modalbody .bm-row {
+  display: flex;
+  margin: 1.5rem 0 0 0;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.modalbg .chargermodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .chargermodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .chargermodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .chargermodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .locationmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .locationmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .locationmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .locationmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .offer-modal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .offer-modal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .offer-modal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .offer-modal .modalbody .bm-row .bm-infocontainer,
+.modalbg .usermodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .usermodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .usermodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .usermodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .businessmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .businessmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .businessmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .businessmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .updatepasswordmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .updatepasswordmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .resetpasswordmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .resetpasswordmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .deletecharger .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .deletecharger .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .deletecharger .modalbody .bm-row .locationaddresscontainer,
+.modalbg .deletecharger .modalbody .bm-row .bm-infocontainer,
+.modalbg .deleterfid .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .deleterfid .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .deleterfid .modalbody .bm-row .locationaddresscontainer,
+.modalbg .deleterfid .modalbody .bm-row .bm-infocontainer,
+.modalbg .deleteadmin .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .deleteadmin .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .deleteadmin .modalbody .bm-row .locationaddresscontainer,
+.modalbg .deleteadmin .modalbody .bm-row .bm-infocontainer,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .deletebusinessadmin .modalbody .bm-row .locationaddresscontainer,
+.modalbg .deletebusinessadmin .modalbody .bm-row .bm-infocontainer,
+.modalbg .deleteorg .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .deleteorg .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .deleteorg .modalbody .bm-row .locationaddresscontainer,
+.modalbg .deleteorg .modalbody .bm-row .bm-infocontainer,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .businessadminmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .businessadminmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .rfidmodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .rfidmodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .rfidmodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .rfidmodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .pricemodal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .pricemodal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .pricemodal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .pricemodal .modalbody .bm-row .bm-infocontainer,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .locationaddresscontainer,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .bm-infocontainer,
+.modalbg .UserPriceModal .modalbody .bm-row .locationaddresscontainer,
+.modalbg .UserPriceModal .modalbody .bm-row .bm-infocontainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  width: calc(50% - 0.5rem);
+}
+.modalbg .chargermodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .chargermodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .chargermodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .chargermodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .locationmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .locationmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .locationmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .locationmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .offer-modal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .offer-modal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .offer-modal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .offer-modal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .usermodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .usermodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .usermodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .usermodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .businessmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .businessmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .businessmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .businessmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .updatepasswordmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .updatepasswordmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .resetpasswordmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .resetpasswordmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .deletecharger .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .deletecharger .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .deletecharger .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .deletecharger .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .deleterfid .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .deleterfid .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .deleterfid .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .deleterfid .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .deleteadmin .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .deleteadmin .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .deleteadmin .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .deleteadmin .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .deletebusinessadmin .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .deletebusinessadmin .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .deleteorg .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .deleteorg .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .deleteorg .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .deleteorg .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .businessadminmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .businessadminmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .rfidmodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .rfidmodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .rfidmodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .rfidmodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .pricemodal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .pricemodal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .pricemodal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .pricemodal .modalbody .bm-row .bm-infocontainer ::file-selector-button,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .locationaddresscontainer ::file-selector-button,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .bm-infocontainer ::file-selector-button,
+.modalbg .UserPriceModal .modalbody .bm-row .locationaddresscontainer ::file-selector-button,
+.modalbg .UserPriceModal .modalbody .bm-row .bm-infocontainer ::file-selector-button {
+  font: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border: 0;
+  width: 102%;
+  height: 100%;
+  background: transparent;
+}
+.modalbg .chargermodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .chargermodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .chargermodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .chargermodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .locationmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .locationmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .locationmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .locationmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .offer-modal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .offer-modal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .offer-modal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .offer-modal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .usermodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .usermodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .usermodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .usermodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .businessmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .businessmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .businessmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .businessmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .updatepasswordmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .updatepasswordmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .updatepasswordmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .resetpasswordmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .resetpasswordmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .resetpasswordmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .deletecharger .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .deletecharger .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .deletecharger .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .deletecharger .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .deleterfid .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .deleterfid .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .deleterfid .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .deleterfid .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .deleteadmin .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .deleteadmin .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .deleteadmin .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .deleteadmin .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .deletebusinessadmin .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .deletebusinessadmin .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .deletebusinessadmin .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .deleteorg .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .deleteorg .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .deleteorg .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .deleteorg .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .businessadminmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .businessadminmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .businessadminmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .rfidmodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .rfidmodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .rfidmodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .rfidmodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .pricemodal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .pricemodal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .pricemodal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .pricemodal .modalbody .bm-row .bm-infocontainer .custom-text,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .locationaddresscontainer .custom-text,
+.modalbg .UserPriceModal .modalbody .locationsecondrow .bm-infocontainer .custom-text,
+.modalbg .UserPriceModal .modalbody .bm-row .locationaddresscontainer .custom-text,
+.modalbg .UserPriceModal .modalbody .bm-row .bm-infocontainer .custom-text {
+  padding: 8px 12px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+.modalbg .chargermodal .modalbody .section_row,
+.modalbg .locationmodal .modalbody .section_row,
+.modalbg .offer-modal .modalbody .section_row,
+.modalbg .usermodal .modalbody .section_row,
+.modalbg .businessmodal .modalbody .section_row,
+.modalbg .updatepasswordmodal .modalbody .section_row,
+.modalbg .resetpasswordmodal .modalbody .section_row,
+.modalbg .deletecharger .modalbody .section_row,
+.modalbg .deleterfid .modalbody .section_row,
+.modalbg .deleteadmin .modalbody .section_row,
+.modalbg .deletebusinessadmin .modalbody .section_row,
+.modalbg .deleteorg .modalbody .section_row,
+.modalbg .businessadminmodal .modalbody .section_row,
+.modalbg .rfidmodal .modalbody .section_row,
+.modalbg .pricemodal .modalbody .section_row,
+.modalbg .UserPriceModal .modalbody .section_row {
+  display: flex;
+  margin: 1.5rem 0 0 0;
+  flex-direction: column;
+  row-gap: 4px;
+}
+.modalbg .chargermodal .modalbody .section_row .section_title,
+.modalbg .locationmodal .modalbody .section_row .section_title,
+.modalbg .offer-modal .modalbody .section_row .section_title,
+.modalbg .usermodal .modalbody .section_row .section_title,
+.modalbg .businessmodal .modalbody .section_row .section_title,
+.modalbg .updatepasswordmodal .modalbody .section_row .section_title,
+.modalbg .resetpasswordmodal .modalbody .section_row .section_title,
+.modalbg .deletecharger .modalbody .section_row .section_title,
+.modalbg .deleterfid .modalbody .section_row .section_title,
+.modalbg .deleteadmin .modalbody .section_row .section_title,
+.modalbg .deletebusinessadmin .modalbody .section_row .section_title,
+.modalbg .deleteorg .modalbody .section_row .section_title,
+.modalbg .businessadminmodal .modalbody .section_row .section_title,
+.modalbg .rfidmodal .modalbody .section_row .section_title,
+.modalbg .pricemodal .modalbody .section_row .section_title,
+.modalbg .UserPriceModal .modalbody .section_row .section_title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.modalbg .chargermodal .modalbody .section_row .day_title,
+.modalbg .locationmodal .modalbody .section_row .day_title,
+.modalbg .offer-modal .modalbody .section_row .day_title,
+.modalbg .usermodal .modalbody .section_row .day_title,
+.modalbg .businessmodal .modalbody .section_row .day_title,
+.modalbg .updatepasswordmodal .modalbody .section_row .day_title,
+.modalbg .resetpasswordmodal .modalbody .section_row .day_title,
+.modalbg .deletecharger .modalbody .section_row .day_title,
+.modalbg .deleterfid .modalbody .section_row .day_title,
+.modalbg .deleteadmin .modalbody .section_row .day_title,
+.modalbg .deletebusinessadmin .modalbody .section_row .day_title,
+.modalbg .deleteorg .modalbody .section_row .day_title,
+.modalbg .businessadminmodal .modalbody .section_row .day_title,
+.modalbg .rfidmodal .modalbody .section_row .day_title,
+.modalbg .pricemodal .modalbody .section_row .day_title,
+.modalbg .UserPriceModal .modalbody .section_row .day_title {
+  width: 20%;
+}
+.modalbg .chargermodal .modalbody .section_row .section_caption,
+.modalbg .locationmodal .modalbody .section_row .section_caption,
+.modalbg .offer-modal .modalbody .section_row .section_caption,
+.modalbg .usermodal .modalbody .section_row .section_caption,
+.modalbg .businessmodal .modalbody .section_row .section_caption,
+.modalbg .updatepasswordmodal .modalbody .section_row .section_caption,
+.modalbg .resetpasswordmodal .modalbody .section_row .section_caption,
+.modalbg .deletecharger .modalbody .section_row .section_caption,
+.modalbg .deleterfid .modalbody .section_row .section_caption,
+.modalbg .deleteadmin .modalbody .section_row .section_caption,
+.modalbg .deletebusinessadmin .modalbody .section_row .section_caption,
+.modalbg .deleteorg .modalbody .section_row .section_caption,
+.modalbg .businessadminmodal .modalbody .section_row .section_caption,
+.modalbg .rfidmodal .modalbody .section_row .section_caption,
+.modalbg .pricemodal .modalbody .section_row .section_caption,
+.modalbg .UserPriceModal .modalbody .section_row .section_caption {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #868E96;
+}
+.modalbg .chargermodal .modalbody .section_row .day_toggle_container,
+.modalbg .locationmodal .modalbody .section_row .day_toggle_container,
+.modalbg .offer-modal .modalbody .section_row .day_toggle_container,
+.modalbg .usermodal .modalbody .section_row .day_toggle_container,
+.modalbg .businessmodal .modalbody .section_row .day_toggle_container,
+.modalbg .updatepasswordmodal .modalbody .section_row .day_toggle_container,
+.modalbg .resetpasswordmodal .modalbody .section_row .day_toggle_container,
+.modalbg .deletecharger .modalbody .section_row .day_toggle_container,
+.modalbg .deleterfid .modalbody .section_row .day_toggle_container,
+.modalbg .deleteadmin .modalbody .section_row .day_toggle_container,
+.modalbg .deletebusinessadmin .modalbody .section_row .day_toggle_container,
+.modalbg .deleteorg .modalbody .section_row .day_toggle_container,
+.modalbg .businessadminmodal .modalbody .section_row .day_toggle_container,
+.modalbg .rfidmodal .modalbody .section_row .day_toggle_container,
+.modalbg .pricemodal .modalbody .section_row .day_toggle_container,
+.modalbg .UserPriceModal .modalbody .section_row .day_toggle_container {
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  width: 20%;
+}
+.modalbg .chargermodal .modalbody .section_row .day_toggle_container input,
+.modalbg .locationmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .offer-modal .modalbody .section_row .day_toggle_container input,
+.modalbg .usermodal .modalbody .section_row .day_toggle_container input,
+.modalbg .businessmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .updatepasswordmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .resetpasswordmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .deletecharger .modalbody .section_row .day_toggle_container input,
+.modalbg .deleterfid .modalbody .section_row .day_toggle_container input,
+.modalbg .deleteadmin .modalbody .section_row .day_toggle_container input,
+.modalbg .deletebusinessadmin .modalbody .section_row .day_toggle_container input,
+.modalbg .deleteorg .modalbody .section_row .day_toggle_container input,
+.modalbg .businessadminmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .rfidmodal .modalbody .section_row .day_toggle_container input,
+.modalbg .pricemodal .modalbody .section_row .day_toggle_container input,
+.modalbg .UserPriceModal .modalbody .section_row .day_toggle_container input {
+  margin-top: 3px;
+}
+.modalbg .chargermodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .locationmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .offer-modal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .usermodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .businessmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .updatepasswordmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .resetpasswordmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .deletecharger .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .deleterfid .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .deleteadmin .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .deletebusinessadmin .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .deleteorg .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .businessadminmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .rfidmodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .pricemodal .modalbody .section_row .day_toggle_container .openstatus,
+.modalbg .UserPriceModal .modalbody .section_row .day_toggle_container .openstatus {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+}
+.modalbg .chargermodal .modalbody .section_row .start_time_container,
+.modalbg .chargermodal .modalbody .section_row .stop_time_container,
+.modalbg .locationmodal .modalbody .section_row .start_time_container,
+.modalbg .locationmodal .modalbody .section_row .stop_time_container,
+.modalbg .offer-modal .modalbody .section_row .start_time_container,
+.modalbg .offer-modal .modalbody .section_row .stop_time_container,
+.modalbg .usermodal .modalbody .section_row .start_time_container,
+.modalbg .usermodal .modalbody .section_row .stop_time_container,
+.modalbg .businessmodal .modalbody .section_row .start_time_container,
+.modalbg .businessmodal .modalbody .section_row .stop_time_container,
+.modalbg .updatepasswordmodal .modalbody .section_row .start_time_container,
+.modalbg .updatepasswordmodal .modalbody .section_row .stop_time_container,
+.modalbg .resetpasswordmodal .modalbody .section_row .start_time_container,
+.modalbg .resetpasswordmodal .modalbody .section_row .stop_time_container,
+.modalbg .deletecharger .modalbody .section_row .start_time_container,
+.modalbg .deletecharger .modalbody .section_row .stop_time_container,
+.modalbg .deleterfid .modalbody .section_row .start_time_container,
+.modalbg .deleterfid .modalbody .section_row .stop_time_container,
+.modalbg .deleteadmin .modalbody .section_row .start_time_container,
+.modalbg .deleteadmin .modalbody .section_row .stop_time_container,
+.modalbg .deletebusinessadmin .modalbody .section_row .start_time_container,
+.modalbg .deletebusinessadmin .modalbody .section_row .stop_time_container,
+.modalbg .deleteorg .modalbody .section_row .start_time_container,
+.modalbg .deleteorg .modalbody .section_row .stop_time_container,
+.modalbg .businessadminmodal .modalbody .section_row .start_time_container,
+.modalbg .businessadminmodal .modalbody .section_row .stop_time_container,
+.modalbg .rfidmodal .modalbody .section_row .start_time_container,
+.modalbg .rfidmodal .modalbody .section_row .stop_time_container,
+.modalbg .pricemodal .modalbody .section_row .start_time_container,
+.modalbg .pricemodal .modalbody .section_row .stop_time_container,
+.modalbg .UserPriceModal .modalbody .section_row .start_time_container,
+.modalbg .UserPriceModal .modalbody .section_row .stop_time_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.modalbg .chargermodal .modalbody .modaltitle,
+.modalbg .locationmodal .modalbody .modaltitle,
+.modalbg .offer-modal .modalbody .modaltitle,
+.modalbg .usermodal .modalbody .modaltitle,
+.modalbg .businessmodal .modalbody .modaltitle,
+.modalbg .updatepasswordmodal .modalbody .modaltitle,
+.modalbg .resetpasswordmodal .modalbody .modaltitle,
+.modalbg .deletecharger .modalbody .modaltitle,
+.modalbg .deleterfid .modalbody .modaltitle,
+.modalbg .deleteadmin .modalbody .modaltitle,
+.modalbg .deletebusinessadmin .modalbody .modaltitle,
+.modalbg .deleteorg .modalbody .modaltitle,
+.modalbg .businessadminmodal .modalbody .modaltitle,
+.modalbg .rfidmodal .modalbody .modaltitle,
+.modalbg .pricemodal .modalbody .modaltitle,
+.modalbg .UserPriceModal .modalbody .modaltitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: #212529;
+}
+.modalbg .chargermodal .modalbody .modaltextinput,
+.modalbg .locationmodal .modalbody .modaltextinput,
+.modalbg .offer-modal .modalbody .modaltextinput,
+.modalbg .usermodal .modalbody .modaltextinput,
+.modalbg .businessmodal .modalbody .modaltextinput,
+.modalbg .updatepasswordmodal .modalbody .modaltextinput,
+.modalbg .resetpasswordmodal .modalbody .modaltextinput,
+.modalbg .deletecharger .modalbody .modaltextinput,
+.modalbg .deleterfid .modalbody .modaltextinput,
+.modalbg .deleteadmin .modalbody .modaltextinput,
+.modalbg .deletebusinessadmin .modalbody .modaltextinput,
+.modalbg .deleteorg .modalbody .modaltextinput,
+.modalbg .businessadminmodal .modalbody .modaltextinput,
+.modalbg .rfidmodal .modalbody .modaltextinput,
+.modalbg .pricemodal .modalbody .modaltextinput,
+.modalbg .UserPriceModal .modalbody .modaltextinput {
+  background: #F8F9FA;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+.modalbg .chargermodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .locationmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .offer-modal .modalbody .modaltextinput::-moz-placeholder, .modalbg .usermodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .businessmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .updatepasswordmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .resetpasswordmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .deletecharger .modalbody .modaltextinput::-moz-placeholder, .modalbg .deleterfid .modalbody .modaltextinput::-moz-placeholder, .modalbg .deleteadmin .modalbody .modaltextinput::-moz-placeholder, .modalbg .deletebusinessadmin .modalbody .modaltextinput::-moz-placeholder, .modalbg .deleteorg .modalbody .modaltextinput::-moz-placeholder, .modalbg .businessadminmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .rfidmodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .pricemodal .modalbody .modaltextinput::-moz-placeholder, .modalbg .UserPriceModal .modalbody .modaltextinput::-moz-placeholder {
+  color: #868E96;
+}
+.modalbg .chargermodal .modalbody .modaltextinput::placeholder,
+.modalbg .locationmodal .modalbody .modaltextinput::placeholder,
+.modalbg .offer-modal .modalbody .modaltextinput::placeholder,
+.modalbg .usermodal .modalbody .modaltextinput::placeholder,
+.modalbg .businessmodal .modalbody .modaltextinput::placeholder,
+.modalbg .updatepasswordmodal .modalbody .modaltextinput::placeholder,
+.modalbg .resetpasswordmodal .modalbody .modaltextinput::placeholder,
+.modalbg .deletecharger .modalbody .modaltextinput::placeholder,
+.modalbg .deleterfid .modalbody .modaltextinput::placeholder,
+.modalbg .deleteadmin .modalbody .modaltextinput::placeholder,
+.modalbg .deletebusinessadmin .modalbody .modaltextinput::placeholder,
+.modalbg .deleteorg .modalbody .modaltextinput::placeholder,
+.modalbg .businessadminmodal .modalbody .modaltextinput::placeholder,
+.modalbg .rfidmodal .modalbody .modaltextinput::placeholder,
+.modalbg .pricemodal .modalbody .modaltextinput::placeholder,
+.modalbg .UserPriceModal .modalbody .modaltextinput::placeholder {
+  color: #868E96;
+}
+.modalbg .chargermodal .modalbody .modaltextinput:disabled,
+.modalbg .locationmodal .modalbody .modaltextinput:disabled,
+.modalbg .offer-modal .modalbody .modaltextinput:disabled,
+.modalbg .usermodal .modalbody .modaltextinput:disabled,
+.modalbg .businessmodal .modalbody .modaltextinput:disabled,
+.modalbg .updatepasswordmodal .modalbody .modaltextinput:disabled,
+.modalbg .resetpasswordmodal .modalbody .modaltextinput:disabled,
+.modalbg .deletecharger .modalbody .modaltextinput:disabled,
+.modalbg .deleterfid .modalbody .modaltextinput:disabled,
+.modalbg .deleteadmin .modalbody .modaltextinput:disabled,
+.modalbg .deletebusinessadmin .modalbody .modaltextinput:disabled,
+.modalbg .deleteorg .modalbody .modaltextinput:disabled,
+.modalbg .businessadminmodal .modalbody .modaltextinput:disabled,
+.modalbg .rfidmodal .modalbody .modaltextinput:disabled,
+.modalbg .pricemodal .modalbody .modaltextinput:disabled,
+.modalbg .UserPriceModal .modalbody .modaltextinput:disabled {
+  background-color: rgba(25, 25, 25, 0.1);
+}
+.modalbg .chargermodal .modalbody .modaltextinput option,
+.modalbg .locationmodal .modalbody .modaltextinput option,
+.modalbg .offer-modal .modalbody .modaltextinput option,
+.modalbg .usermodal .modalbody .modaltextinput option,
+.modalbg .businessmodal .modalbody .modaltextinput option,
+.modalbg .updatepasswordmodal .modalbody .modaltextinput option,
+.modalbg .resetpasswordmodal .modalbody .modaltextinput option,
+.modalbg .deletecharger .modalbody .modaltextinput option,
+.modalbg .deleterfid .modalbody .modaltextinput option,
+.modalbg .deleteadmin .modalbody .modaltextinput option,
+.modalbg .deletebusinessadmin .modalbody .modaltextinput option,
+.modalbg .deleteorg .modalbody .modaltextinput option,
+.modalbg .businessadminmodal .modalbody .modaltextinput option,
+.modalbg .rfidmodal .modalbody .modaltextinput option,
+.modalbg .pricemodal .modalbody .modaltextinput option,
+.modalbg .UserPriceModal .modalbody .modaltextinput option {
+  color: #212529;
+}
+.modalbg .chargermodal .modalbody .modaltextinput option:disabled,
+.modalbg .locationmodal .modalbody .modaltextinput option:disabled,
+.modalbg .offer-modal .modalbody .modaltextinput option:disabled,
+.modalbg .usermodal .modalbody .modaltextinput option:disabled,
+.modalbg .businessmodal .modalbody .modaltextinput option:disabled,
+.modalbg .updatepasswordmodal .modalbody .modaltextinput option:disabled,
+.modalbg .resetpasswordmodal .modalbody .modaltextinput option:disabled,
+.modalbg .deletecharger .modalbody .modaltextinput option:disabled,
+.modalbg .deleterfid .modalbody .modaltextinput option:disabled,
+.modalbg .deleteadmin .modalbody .modaltextinput option:disabled,
+.modalbg .deletebusinessadmin .modalbody .modaltextinput option:disabled,
+.modalbg .deleteorg .modalbody .modaltextinput option:disabled,
+.modalbg .businessadminmodal .modalbody .modaltextinput option:disabled,
+.modalbg .rfidmodal .modalbody .modaltextinput option:disabled,
+.modalbg .pricemodal .modalbody .modaltextinput option:disabled,
+.modalbg .UserPriceModal .modalbody .modaltextinput option:disabled {
+  color: #868E96;
+}
+.modalbg .chargermodal .modalbody #cm-locationname,
+.modalbg .locationmodal .modalbody #cm-locationname,
+.modalbg .offer-modal .modalbody #cm-locationname,
+.modalbg .usermodal .modalbody #cm-locationname,
+.modalbg .businessmodal .modalbody #cm-locationname,
+.modalbg .updatepasswordmodal .modalbody #cm-locationname,
+.modalbg .resetpasswordmodal .modalbody #cm-locationname,
+.modalbg .deletecharger .modalbody #cm-locationname,
+.modalbg .deleterfid .modalbody #cm-locationname,
+.modalbg .deleteadmin .modalbody #cm-locationname,
+.modalbg .deletebusinessadmin .modalbody #cm-locationname,
+.modalbg .deleteorg .modalbody #cm-locationname,
+.modalbg .businessadminmodal .modalbody #cm-locationname,
+.modalbg .rfidmodal .modalbody #cm-locationname,
+.modalbg .pricemodal .modalbody #cm-locationname,
+.modalbg .UserPriceModal .modalbody #cm-locationname {
+  width: 100%;
+}
+.modalbg .chargermodal .modalbody .chargeridcontainer,
+.modalbg .chargermodal .modalbody .modalnumbercontainer,
+.modalbg .chargermodal .modalbody .maxoutputcontainer,
+.modalbg .chargermodal .modalbody .chargerstypecontainer,
+.modalbg .chargermodal .modalbody .chargerlocationcontainer,
+.modalbg .chargermodal .modalbody .billtypecontainer,
+.modalbg .chargermodal .modalbody .billpricecontainer,
+.modalbg .locationmodal .modalbody .chargeridcontainer,
+.modalbg .locationmodal .modalbody .modalnumbercontainer,
+.modalbg .locationmodal .modalbody .maxoutputcontainer,
+.modalbg .locationmodal .modalbody .chargerstypecontainer,
+.modalbg .locationmodal .modalbody .chargerlocationcontainer,
+.modalbg .locationmodal .modalbody .billtypecontainer,
+.modalbg .locationmodal .modalbody .billpricecontainer,
+.modalbg .offer-modal .modalbody .chargeridcontainer,
+.modalbg .offer-modal .modalbody .modalnumbercontainer,
+.modalbg .offer-modal .modalbody .maxoutputcontainer,
+.modalbg .offer-modal .modalbody .chargerstypecontainer,
+.modalbg .offer-modal .modalbody .chargerlocationcontainer,
+.modalbg .offer-modal .modalbody .billtypecontainer,
+.modalbg .offer-modal .modalbody .billpricecontainer,
+.modalbg .usermodal .modalbody .chargeridcontainer,
+.modalbg .usermodal .modalbody .modalnumbercontainer,
+.modalbg .usermodal .modalbody .maxoutputcontainer,
+.modalbg .usermodal .modalbody .chargerstypecontainer,
+.modalbg .usermodal .modalbody .chargerlocationcontainer,
+.modalbg .usermodal .modalbody .billtypecontainer,
+.modalbg .usermodal .modalbody .billpricecontainer,
+.modalbg .businessmodal .modalbody .chargeridcontainer,
+.modalbg .businessmodal .modalbody .modalnumbercontainer,
+.modalbg .businessmodal .modalbody .maxoutputcontainer,
+.modalbg .businessmodal .modalbody .chargerstypecontainer,
+.modalbg .businessmodal .modalbody .chargerlocationcontainer,
+.modalbg .businessmodal .modalbody .billtypecontainer,
+.modalbg .businessmodal .modalbody .billpricecontainer,
+.modalbg .updatepasswordmodal .modalbody .chargeridcontainer,
+.modalbg .updatepasswordmodal .modalbody .modalnumbercontainer,
+.modalbg .updatepasswordmodal .modalbody .maxoutputcontainer,
+.modalbg .updatepasswordmodal .modalbody .chargerstypecontainer,
+.modalbg .updatepasswordmodal .modalbody .chargerlocationcontainer,
+.modalbg .updatepasswordmodal .modalbody .billtypecontainer,
+.modalbg .updatepasswordmodal .modalbody .billpricecontainer,
+.modalbg .resetpasswordmodal .modalbody .chargeridcontainer,
+.modalbg .resetpasswordmodal .modalbody .modalnumbercontainer,
+.modalbg .resetpasswordmodal .modalbody .maxoutputcontainer,
+.modalbg .resetpasswordmodal .modalbody .chargerstypecontainer,
+.modalbg .resetpasswordmodal .modalbody .chargerlocationcontainer,
+.modalbg .resetpasswordmodal .modalbody .billtypecontainer,
+.modalbg .resetpasswordmodal .modalbody .billpricecontainer,
+.modalbg .deletecharger .modalbody .chargeridcontainer,
+.modalbg .deletecharger .modalbody .modalnumbercontainer,
+.modalbg .deletecharger .modalbody .maxoutputcontainer,
+.modalbg .deletecharger .modalbody .chargerstypecontainer,
+.modalbg .deletecharger .modalbody .chargerlocationcontainer,
+.modalbg .deletecharger .modalbody .billtypecontainer,
+.modalbg .deletecharger .modalbody .billpricecontainer,
+.modalbg .deleterfid .modalbody .chargeridcontainer,
+.modalbg .deleterfid .modalbody .modalnumbercontainer,
+.modalbg .deleterfid .modalbody .maxoutputcontainer,
+.modalbg .deleterfid .modalbody .chargerstypecontainer,
+.modalbg .deleterfid .modalbody .chargerlocationcontainer,
+.modalbg .deleterfid .modalbody .billtypecontainer,
+.modalbg .deleterfid .modalbody .billpricecontainer,
+.modalbg .deleteadmin .modalbody .chargeridcontainer,
+.modalbg .deleteadmin .modalbody .modalnumbercontainer,
+.modalbg .deleteadmin .modalbody .maxoutputcontainer,
+.modalbg .deleteadmin .modalbody .chargerstypecontainer,
+.modalbg .deleteadmin .modalbody .chargerlocationcontainer,
+.modalbg .deleteadmin .modalbody .billtypecontainer,
+.modalbg .deleteadmin .modalbody .billpricecontainer,
+.modalbg .deletebusinessadmin .modalbody .chargeridcontainer,
+.modalbg .deletebusinessadmin .modalbody .modalnumbercontainer,
+.modalbg .deletebusinessadmin .modalbody .maxoutputcontainer,
+.modalbg .deletebusinessadmin .modalbody .chargerstypecontainer,
+.modalbg .deletebusinessadmin .modalbody .chargerlocationcontainer,
+.modalbg .deletebusinessadmin .modalbody .billtypecontainer,
+.modalbg .deletebusinessadmin .modalbody .billpricecontainer,
+.modalbg .deleteorg .modalbody .chargeridcontainer,
+.modalbg .deleteorg .modalbody .modalnumbercontainer,
+.modalbg .deleteorg .modalbody .maxoutputcontainer,
+.modalbg .deleteorg .modalbody .chargerstypecontainer,
+.modalbg .deleteorg .modalbody .chargerlocationcontainer,
+.modalbg .deleteorg .modalbody .billtypecontainer,
+.modalbg .deleteorg .modalbody .billpricecontainer,
+.modalbg .businessadminmodal .modalbody .chargeridcontainer,
+.modalbg .businessadminmodal .modalbody .modalnumbercontainer,
+.modalbg .businessadminmodal .modalbody .maxoutputcontainer,
+.modalbg .businessadminmodal .modalbody .chargerstypecontainer,
+.modalbg .businessadminmodal .modalbody .chargerlocationcontainer,
+.modalbg .businessadminmodal .modalbody .billtypecontainer,
+.modalbg .businessadminmodal .modalbody .billpricecontainer,
+.modalbg .rfidmodal .modalbody .chargeridcontainer,
+.modalbg .rfidmodal .modalbody .modalnumbercontainer,
+.modalbg .rfidmodal .modalbody .maxoutputcontainer,
+.modalbg .rfidmodal .modalbody .chargerstypecontainer,
+.modalbg .rfidmodal .modalbody .chargerlocationcontainer,
+.modalbg .rfidmodal .modalbody .billtypecontainer,
+.modalbg .rfidmodal .modalbody .billpricecontainer,
+.modalbg .pricemodal .modalbody .chargeridcontainer,
+.modalbg .pricemodal .modalbody .modalnumbercontainer,
+.modalbg .pricemodal .modalbody .maxoutputcontainer,
+.modalbg .pricemodal .modalbody .chargerstypecontainer,
+.modalbg .pricemodal .modalbody .chargerlocationcontainer,
+.modalbg .pricemodal .modalbody .billtypecontainer,
+.modalbg .pricemodal .modalbody .billpricecontainer,
+.modalbg .UserPriceModal .modalbody .chargeridcontainer,
+.modalbg .UserPriceModal .modalbody .modalnumbercontainer,
+.modalbg .UserPriceModal .modalbody .maxoutputcontainer,
+.modalbg .UserPriceModal .modalbody .chargerstypecontainer,
+.modalbg .UserPriceModal .modalbody .chargerlocationcontainer,
+.modalbg .UserPriceModal .modalbody .billtypecontainer,
+.modalbg .UserPriceModal .modalbody .billpricecontainer {
+  display: flex;
+  row-gap: 0.5rem;
+  flex-direction: column;
+}
+.modalbg .chargermodal .modalbody .billtypecontainer,
+.modalbg .locationmodal .modalbody .billtypecontainer,
+.modalbg .offer-modal .modalbody .billtypecontainer,
+.modalbg .usermodal .modalbody .billtypecontainer,
+.modalbg .businessmodal .modalbody .billtypecontainer,
+.modalbg .updatepasswordmodal .modalbody .billtypecontainer,
+.modalbg .resetpasswordmodal .modalbody .billtypecontainer,
+.modalbg .deletecharger .modalbody .billtypecontainer,
+.modalbg .deleterfid .modalbody .billtypecontainer,
+.modalbg .deleteadmin .modalbody .billtypecontainer,
+.modalbg .deletebusinessadmin .modalbody .billtypecontainer,
+.modalbg .deleteorg .modalbody .billtypecontainer,
+.modalbg .businessadminmodal .modalbody .billtypecontainer,
+.modalbg .rfidmodal .modalbody .billtypecontainer,
+.modalbg .pricemodal .modalbody .billtypecontainer,
+.modalbg .UserPriceModal .modalbody .billtypecontainer {
+  width: calc(50% - 1rem);
+}
+.modalbg .chargermodal .modalbody .billtypecontainer .customselector,
+.modalbg .locationmodal .modalbody .billtypecontainer .customselector,
+.modalbg .offer-modal .modalbody .billtypecontainer .customselector,
+.modalbg .usermodal .modalbody .billtypecontainer .customselector,
+.modalbg .businessmodal .modalbody .billtypecontainer .customselector,
+.modalbg .updatepasswordmodal .modalbody .billtypecontainer .customselector,
+.modalbg .resetpasswordmodal .modalbody .billtypecontainer .customselector,
+.modalbg .deletecharger .modalbody .billtypecontainer .customselector,
+.modalbg .deleterfid .modalbody .billtypecontainer .customselector,
+.modalbg .deleteadmin .modalbody .billtypecontainer .customselector,
+.modalbg .deletebusinessadmin .modalbody .billtypecontainer .customselector,
+.modalbg .deleteorg .modalbody .billtypecontainer .customselector,
+.modalbg .businessadminmodal .modalbody .billtypecontainer .customselector,
+.modalbg .rfidmodal .modalbody .billtypecontainer .customselector,
+.modalbg .pricemodal .modalbody .billtypecontainer .customselector,
+.modalbg .UserPriceModal .modalbody .billtypecontainer .customselector {
+  width: 100%;
+}
+.modalbg .chargermodal .modalbody .billpricecontainer,
+.modalbg .locationmodal .modalbody .billpricecontainer,
+.modalbg .offer-modal .modalbody .billpricecontainer,
+.modalbg .usermodal .modalbody .billpricecontainer,
+.modalbg .businessmodal .modalbody .billpricecontainer,
+.modalbg .updatepasswordmodal .modalbody .billpricecontainer,
+.modalbg .resetpasswordmodal .modalbody .billpricecontainer,
+.modalbg .deletecharger .modalbody .billpricecontainer,
+.modalbg .deleterfid .modalbody .billpricecontainer,
+.modalbg .deleteadmin .modalbody .billpricecontainer,
+.modalbg .deletebusinessadmin .modalbody .billpricecontainer,
+.modalbg .deleteorg .modalbody .billpricecontainer,
+.modalbg .businessadminmodal .modalbody .billpricecontainer,
+.modalbg .rfidmodal .modalbody .billpricecontainer,
+.modalbg .pricemodal .modalbody .billpricecontainer,
+.modalbg .UserPriceModal .modalbody .billpricecontainer {
+  width: 50%;
+  position: relative;
+}
+.modalbg .chargermodal .modalbody .chargerlocationcontainer,
+.modalbg .locationmodal .modalbody .chargerlocationcontainer,
+.modalbg .offer-modal .modalbody .chargerlocationcontainer,
+.modalbg .usermodal .modalbody .chargerlocationcontainer,
+.modalbg .businessmodal .modalbody .chargerlocationcontainer,
+.modalbg .updatepasswordmodal .modalbody .chargerlocationcontainer,
+.modalbg .resetpasswordmodal .modalbody .chargerlocationcontainer,
+.modalbg .deletecharger .modalbody .chargerlocationcontainer,
+.modalbg .deleterfid .modalbody .chargerlocationcontainer,
+.modalbg .deleteadmin .modalbody .chargerlocationcontainer,
+.modalbg .deletebusinessadmin .modalbody .chargerlocationcontainer,
+.modalbg .deleteorg .modalbody .chargerlocationcontainer,
+.modalbg .businessadminmodal .modalbody .chargerlocationcontainer,
+.modalbg .rfidmodal .modalbody .chargerlocationcontainer,
+.modalbg .pricemodal .modalbody .chargerlocationcontainer,
+.modalbg .UserPriceModal .modalbody .chargerlocationcontainer {
+  width: 100%;
+}
+.modalbg .chargermodal .modalbody .connectortable,
+.modalbg .locationmodal .modalbody .connectortable,
+.modalbg .offer-modal .modalbody .connectortable,
+.modalbg .usermodal .modalbody .connectortable,
+.modalbg .businessmodal .modalbody .connectortable,
+.modalbg .updatepasswordmodal .modalbody .connectortable,
+.modalbg .resetpasswordmodal .modalbody .connectortable,
+.modalbg .deletecharger .modalbody .connectortable,
+.modalbg .deleterfid .modalbody .connectortable,
+.modalbg .deleteadmin .modalbody .connectortable,
+.modalbg .deletebusinessadmin .modalbody .connectortable,
+.modalbg .deleteorg .modalbody .connectortable,
+.modalbg .businessadminmodal .modalbody .connectortable,
+.modalbg .rfidmodal .modalbody .connectortable,
+.modalbg .pricemodal .modalbody .connectortable,
+.modalbg .UserPriceModal .modalbody .connectortable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalbg .chargermodal .modalbody .connectortable table,
+.modalbg .locationmodal .modalbody .connectortable table,
+.modalbg .offer-modal .modalbody .connectortable table,
+.modalbg .usermodal .modalbody .connectortable table,
+.modalbg .businessmodal .modalbody .connectortable table,
+.modalbg .updatepasswordmodal .modalbody .connectortable table,
+.modalbg .resetpasswordmodal .modalbody .connectortable table,
+.modalbg .deletecharger .modalbody .connectortable table,
+.modalbg .deleterfid .modalbody .connectortable table,
+.modalbg .deleteadmin .modalbody .connectortable table,
+.modalbg .deletebusinessadmin .modalbody .connectortable table,
+.modalbg .deleteorg .modalbody .connectortable table,
+.modalbg .businessadminmodal .modalbody .connectortable table,
+.modalbg .rfidmodal .modalbody .connectortable table,
+.modalbg .pricemodal .modalbody .connectortable table,
+.modalbg .UserPriceModal .modalbody .connectortable table {
+  width: 100%;
+}
+.modalbg .chargermodal .modalbody .connectortable table th,
+.modalbg .locationmodal .modalbody .connectortable table th,
+.modalbg .offer-modal .modalbody .connectortable table th,
+.modalbg .usermodal .modalbody .connectortable table th,
+.modalbg .businessmodal .modalbody .connectortable table th,
+.modalbg .updatepasswordmodal .modalbody .connectortable table th,
+.modalbg .resetpasswordmodal .modalbody .connectortable table th,
+.modalbg .deletecharger .modalbody .connectortable table th,
+.modalbg .deleterfid .modalbody .connectortable table th,
+.modalbg .deleteadmin .modalbody .connectortable table th,
+.modalbg .deletebusinessadmin .modalbody .connectortable table th,
+.modalbg .deleteorg .modalbody .connectortable table th,
+.modalbg .businessadminmodal .modalbody .connectortable table th,
+.modalbg .rfidmodal .modalbody .connectortable table th,
+.modalbg .pricemodal .modalbody .connectortable table th,
+.modalbg .UserPriceModal .modalbody .connectortable table th {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+  background: #E9ECEF;
+  padding: 8px 12px;
+  border-color: #CED4DA;
+  border-style: solid;
+  border-width: 1px;
+  border-top: 0;
+}
+.modalbg .chargermodal .modalbody .connectortable table th:first-child,
+.modalbg .locationmodal .modalbody .connectortable table th:first-child,
+.modalbg .offer-modal .modalbody .connectortable table th:first-child,
+.modalbg .usermodal .modalbody .connectortable table th:first-child,
+.modalbg .businessmodal .modalbody .connectortable table th:first-child,
+.modalbg .updatepasswordmodal .modalbody .connectortable table th:first-child,
+.modalbg .resetpasswordmodal .modalbody .connectortable table th:first-child,
+.modalbg .deletecharger .modalbody .connectortable table th:first-child,
+.modalbg .deleterfid .modalbody .connectortable table th:first-child,
+.modalbg .deleteadmin .modalbody .connectortable table th:first-child,
+.modalbg .deletebusinessadmin .modalbody .connectortable table th:first-child,
+.modalbg .deleteorg .modalbody .connectortable table th:first-child,
+.modalbg .businessadminmodal .modalbody .connectortable table th:first-child,
+.modalbg .rfidmodal .modalbody .connectortable table th:first-child,
+.modalbg .pricemodal .modalbody .connectortable table th:first-child,
+.modalbg .UserPriceModal .modalbody .connectortable table th:first-child {
+  border-top-left-radius: 8px;
+  border-top: 0;
+  border-left: #fff;
+  border-right: #fff;
+}
+.modalbg .chargermodal .modalbody .connectortable table th:last-child,
+.modalbg .locationmodal .modalbody .connectortable table th:last-child,
+.modalbg .offer-modal .modalbody .connectortable table th:last-child,
+.modalbg .usermodal .modalbody .connectortable table th:last-child,
+.modalbg .businessmodal .modalbody .connectortable table th:last-child,
+.modalbg .updatepasswordmodal .modalbody .connectortable table th:last-child,
+.modalbg .resetpasswordmodal .modalbody .connectortable table th:last-child,
+.modalbg .deletecharger .modalbody .connectortable table th:last-child,
+.modalbg .deleterfid .modalbody .connectortable table th:last-child,
+.modalbg .deleteadmin .modalbody .connectortable table th:last-child,
+.modalbg .deletebusinessadmin .modalbody .connectortable table th:last-child,
+.modalbg .deleteorg .modalbody .connectortable table th:last-child,
+.modalbg .businessadminmodal .modalbody .connectortable table th:last-child,
+.modalbg .rfidmodal .modalbody .connectortable table th:last-child,
+.modalbg .pricemodal .modalbody .connectortable table th:last-child,
+.modalbg .UserPriceModal .modalbody .connectortable table th:last-child {
+  border-top-right-radius: 8px;
+  border-top: #fff;
+  border-left: #fff;
+  border-right: #fff;
+}
+.modalbg .chargermodal .modalbody .connectortable table td,
+.modalbg .locationmodal .modalbody .connectortable table td,
+.modalbg .offer-modal .modalbody .connectortable table td,
+.modalbg .usermodal .modalbody .connectortable table td,
+.modalbg .businessmodal .modalbody .connectortable table td,
+.modalbg .updatepasswordmodal .modalbody .connectortable table td,
+.modalbg .resetpasswordmodal .modalbody .connectortable table td,
+.modalbg .deletecharger .modalbody .connectortable table td,
+.modalbg .deleterfid .modalbody .connectortable table td,
+.modalbg .deleteadmin .modalbody .connectortable table td,
+.modalbg .deletebusinessadmin .modalbody .connectortable table td,
+.modalbg .deleteorg .modalbody .connectortable table td,
+.modalbg .businessadminmodal .modalbody .connectortable table td,
+.modalbg .rfidmodal .modalbody .connectortable table td,
+.modalbg .pricemodal .modalbody .connectortable table td,
+.modalbg .UserPriceModal .modalbody .connectortable table td {
+  background-color: #F8F9FA;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  border-color: #CED4DA;
+  border-style: solid;
+  border-width: 1px;
+}
+.modalbg .chargermodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .locationmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .offer-modal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .usermodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .businessmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .updatepasswordmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .resetpasswordmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .deletecharger .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .deleterfid .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .deleteadmin .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .deletebusinessadmin .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .deleteorg .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .businessadminmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .rfidmodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .pricemodal .modalbody .connectortable table td .uil-trash-alt,
+.modalbg .UserPriceModal .modalbody .connectortable table td .uil-trash-alt {
+  color: #FA5252;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.modalbg .chargermodal .modalbody .connectortable table td input,
+.modalbg .locationmodal .modalbody .connectortable table td input,
+.modalbg .offer-modal .modalbody .connectortable table td input,
+.modalbg .usermodal .modalbody .connectortable table td input,
+.modalbg .businessmodal .modalbody .connectortable table td input,
+.modalbg .updatepasswordmodal .modalbody .connectortable table td input,
+.modalbg .resetpasswordmodal .modalbody .connectortable table td input,
+.modalbg .deletecharger .modalbody .connectortable table td input,
+.modalbg .deleterfid .modalbody .connectortable table td input,
+.modalbg .deleteadmin .modalbody .connectortable table td input,
+.modalbg .deletebusinessadmin .modalbody .connectortable table td input,
+.modalbg .deleteorg .modalbody .connectortable table td input,
+.modalbg .businessadminmodal .modalbody .connectortable table td input,
+.modalbg .rfidmodal .modalbody .connectortable table td input,
+.modalbg .pricemodal .modalbody .connectortable table td input,
+.modalbg .UserPriceModal .modalbody .connectortable table td input {
+  width: 100%;
+  min-height: 34px;
+  background-color: transparent;
+  border: 0;
+  padding: 8px 12px;
+}
+.modalbg .chargermodal .modalbody .connectortable table td:first-child,
+.modalbg .locationmodal .modalbody .connectortable table td:first-child,
+.modalbg .offer-modal .modalbody .connectortable table td:first-child,
+.modalbg .usermodal .modalbody .connectortable table td:first-child,
+.modalbg .businessmodal .modalbody .connectortable table td:first-child,
+.modalbg .updatepasswordmodal .modalbody .connectortable table td:first-child,
+.modalbg .resetpasswordmodal .modalbody .connectortable table td:first-child,
+.modalbg .deletecharger .modalbody .connectortable table td:first-child,
+.modalbg .deleterfid .modalbody .connectortable table td:first-child,
+.modalbg .deleteadmin .modalbody .connectortable table td:first-child,
+.modalbg .deletebusinessadmin .modalbody .connectortable table td:first-child,
+.modalbg .deleteorg .modalbody .connectortable table td:first-child,
+.modalbg .businessadminmodal .modalbody .connectortable table td:first-child,
+.modalbg .rfidmodal .modalbody .connectortable table td:first-child,
+.modalbg .pricemodal .modalbody .connectortable table td:first-child,
+.modalbg .UserPriceModal .modalbody .connectortable table td:first-child {
+  padding: 8px 12px;
+}
+.modalbg .chargermodal .modalbody .connectortable table td:last-child,
+.modalbg .locationmodal .modalbody .connectortable table td:last-child,
+.modalbg .offer-modal .modalbody .connectortable table td:last-child,
+.modalbg .usermodal .modalbody .connectortable table td:last-child,
+.modalbg .businessmodal .modalbody .connectortable table td:last-child,
+.modalbg .updatepasswordmodal .modalbody .connectortable table td:last-child,
+.modalbg .resetpasswordmodal .modalbody .connectortable table td:last-child,
+.modalbg .deletecharger .modalbody .connectortable table td:last-child,
+.modalbg .deleterfid .modalbody .connectortable table td:last-child,
+.modalbg .deleteadmin .modalbody .connectortable table td:last-child,
+.modalbg .deletebusinessadmin .modalbody .connectortable table td:last-child,
+.modalbg .deleteorg .modalbody .connectortable table td:last-child,
+.modalbg .businessadminmodal .modalbody .connectortable table td:last-child,
+.modalbg .rfidmodal .modalbody .connectortable table td:last-child,
+.modalbg .pricemodal .modalbody .connectortable table td:last-child,
+.modalbg .UserPriceModal .modalbody .connectortable table td:last-child {
+  padding: 8px 12px;
+}
+.modalbg .chargermodal .modalbody .modaldeletetext,
+.modalbg .locationmodal .modalbody .modaldeletetext,
+.modalbg .offer-modal .modalbody .modaldeletetext,
+.modalbg .usermodal .modalbody .modaldeletetext,
+.modalbg .businessmodal .modalbody .modaldeletetext,
+.modalbg .updatepasswordmodal .modalbody .modaldeletetext,
+.modalbg .resetpasswordmodal .modalbody .modaldeletetext,
+.modalbg .deletecharger .modalbody .modaldeletetext,
+.modalbg .deleterfid .modalbody .modaldeletetext,
+.modalbg .deleteadmin .modalbody .modaldeletetext,
+.modalbg .deletebusinessadmin .modalbody .modaldeletetext,
+.modalbg .deleteorg .modalbody .modaldeletetext,
+.modalbg .businessadminmodal .modalbody .modaldeletetext,
+.modalbg .rfidmodal .modalbody .modaldeletetext,
+.modalbg .pricemodal .modalbody .modaldeletetext,
+.modalbg .UserPriceModal .modalbody .modaldeletetext {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+}
+.modalbg .chargermodal .modalbody .modaldeletetext span,
+.modalbg .locationmodal .modalbody .modaldeletetext span,
+.modalbg .offer-modal .modalbody .modaldeletetext span,
+.modalbg .usermodal .modalbody .modaldeletetext span,
+.modalbg .businessmodal .modalbody .modaldeletetext span,
+.modalbg .updatepasswordmodal .modalbody .modaldeletetext span,
+.modalbg .resetpasswordmodal .modalbody .modaldeletetext span,
+.modalbg .deletecharger .modalbody .modaldeletetext span,
+.modalbg .deleterfid .modalbody .modaldeletetext span,
+.modalbg .deleteadmin .modalbody .modaldeletetext span,
+.modalbg .deletebusinessadmin .modalbody .modaldeletetext span,
+.modalbg .deleteorg .modalbody .modaldeletetext span,
+.modalbg .businessadminmodal .modalbody .modaldeletetext span,
+.modalbg .rfidmodal .modalbody .modaldeletetext span,
+.modalbg .pricemodal .modalbody .modaldeletetext span,
+.modalbg .UserPriceModal .modalbody .modaldeletetext span {
+  font-weight: 600;
+}
+.modalbg .chargermodal .modalbody .hrborder,
+.modalbg .locationmodal .modalbody .hrborder,
+.modalbg .offer-modal .modalbody .hrborder,
+.modalbg .usermodal .modalbody .hrborder,
+.modalbg .businessmodal .modalbody .hrborder,
+.modalbg .updatepasswordmodal .modalbody .hrborder,
+.modalbg .resetpasswordmodal .modalbody .hrborder,
+.modalbg .deletecharger .modalbody .hrborder,
+.modalbg .deleterfid .modalbody .hrborder,
+.modalbg .deleteadmin .modalbody .hrborder,
+.modalbg .deletebusinessadmin .modalbody .hrborder,
+.modalbg .deleteorg .modalbody .hrborder,
+.modalbg .businessadminmodal .modalbody .hrborder,
+.modalbg .rfidmodal .modalbody .hrborder,
+.modalbg .pricemodal .modalbody .hrborder,
+.modalbg .UserPriceModal .modalbody .hrborder {
+  width: 100%;
+  margin: 1.5rem 0 0 0;
+  border: 1px solid #CED4DA;
+  background: #CED4DA;
+}
+.modalbg .chargermodal .modalfootersection,
+.modalbg .locationmodal .modalfootersection,
+.modalbg .offer-modal .modalfootersection,
+.modalbg .usermodal .modalfootersection,
+.modalbg .businessmodal .modalfootersection,
+.modalbg .updatepasswordmodal .modalfootersection,
+.modalbg .resetpasswordmodal .modalfootersection,
+.modalbg .deletecharger .modalfootersection,
+.modalbg .deleterfid .modalfootersection,
+.modalbg .deleteadmin .modalfootersection,
+.modalbg .deletebusinessadmin .modalfootersection,
+.modalbg .deleteorg .modalfootersection,
+.modalbg .businessadminmodal .modalfootersection,
+.modalbg .rfidmodal .modalfootersection,
+.modalbg .pricemodal .modalfootersection,
+.modalbg .UserPriceModal .modalfootersection {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: #fff;
+  border-top: 1px solid #CED4DA;
+  padding: 1.5rem;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  border-radius: 0px 0px 8px 8px;
+}
+.modalbg .chargermodal .modalfootersection .cancelbtn,
+.modalbg .locationmodal .modalfootersection .cancelbtn,
+.modalbg .offer-modal .modalfootersection .cancelbtn,
+.modalbg .usermodal .modalfootersection .cancelbtn,
+.modalbg .businessmodal .modalfootersection .cancelbtn,
+.modalbg .updatepasswordmodal .modalfootersection .cancelbtn,
+.modalbg .resetpasswordmodal .modalfootersection .cancelbtn,
+.modalbg .deletecharger .modalfootersection .cancelbtn,
+.modalbg .deleterfid .modalfootersection .cancelbtn,
+.modalbg .deleteadmin .modalfootersection .cancelbtn,
+.modalbg .deletebusinessadmin .modalfootersection .cancelbtn,
+.modalbg .deleteorg .modalfootersection .cancelbtn,
+.modalbg .businessadminmodal .modalfootersection .cancelbtn,
+.modalbg .rfidmodal .modalfootersection .cancelbtn,
+.modalbg .pricemodal .modalfootersection .cancelbtn,
+.modalbg .UserPriceModal .modalfootersection .cancelbtn {
+  border: 1.6px solid #CED4DA;
+  border-radius: 32px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
+.modalbg .chargermodal .modalfootersection .addupdatebtn,
+.modalbg .locationmodal .modalfootersection .addupdatebtn,
+.modalbg .offer-modal .modalfootersection .addupdatebtn,
+.modalbg .usermodal .modalfootersection .addupdatebtn,
+.modalbg .businessmodal .modalfootersection .addupdatebtn,
+.modalbg .updatepasswordmodal .modalfootersection .addupdatebtn,
+.modalbg .resetpasswordmodal .modalfootersection .addupdatebtn,
+.modalbg .deletecharger .modalfootersection .addupdatebtn,
+.modalbg .deleterfid .modalfootersection .addupdatebtn,
+.modalbg .deleteadmin .modalfootersection .addupdatebtn,
+.modalbg .deletebusinessadmin .modalfootersection .addupdatebtn,
+.modalbg .deleteorg .modalfootersection .addupdatebtn,
+.modalbg .businessadminmodal .modalfootersection .addupdatebtn,
+.modalbg .rfidmodal .modalfootersection .addupdatebtn,
+.modalbg .pricemodal .modalfootersection .addupdatebtn,
+.modalbg .UserPriceModal .modalfootersection .addupdatebtn {
+  border-radius: 32px;
+  padding: 0.5rem 1.5rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  border: 0;
+}
+.modalbg .chargermodal .modalfootersection .deletebtn,
+.modalbg .locationmodal .modalfootersection .deletebtn,
+.modalbg .offer-modal .modalfootersection .deletebtn,
+.modalbg .usermodal .modalfootersection .deletebtn,
+.modalbg .businessmodal .modalfootersection .deletebtn,
+.modalbg .updatepasswordmodal .modalfootersection .deletebtn,
+.modalbg .resetpasswordmodal .modalfootersection .deletebtn,
+.modalbg .deletecharger .modalfootersection .deletebtn,
+.modalbg .deleterfid .modalfootersection .deletebtn,
+.modalbg .deleteadmin .modalfootersection .deletebtn,
+.modalbg .deletebusinessadmin .modalfootersection .deletebtn,
+.modalbg .deleteorg .modalfootersection .deletebtn,
+.modalbg .businessadminmodal .modalfootersection .deletebtn,
+.modalbg .rfidmodal .modalfootersection .deletebtn,
+.modalbg .pricemodal .modalfootersection .deletebtn,
+.modalbg .UserPriceModal .modalfootersection .deletebtn {
+  background: #FA5252;
+  border-radius: 32px;
+  padding: 0.5rem 1.5rem;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  border: 1.6px solid #E03131;
+  color: white;
+}
+.modalbg .updatepasswordmodal {
+  width: 30%;
+  min-width: 480px;
+}
+.modalbg .deletecharger,
+.modalbg .deleterfid,
+.modalbg .deleteadmin {
+  min-width: 607px;
+  width: 39%;
+  height: auto;
+}
+.modalbg .deletecharger .modaldeletetext,
+.modalbg .deleterfid .modaldeletetext,
+.modalbg .deleteadmin .modaldeletetext {
+  margin-bottom: 50px;
+}
+
+#locationmodal #lm-locationlng,
+#locationmodal #lm-locationlat,
+#locationmodal #lm-locationcountry {
+  display: none;
+}
+
+.toastlist_container {
+  position: fixed;
+  right: 24px;
+  top: 104px;
+  height: auto;
+  z-index: 1000;
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+}
+
+.mytoast {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 1rem;
+  max-width: 364px;
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 10px 16px -4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border-bottom: 4px solid #4DABF7;
+  transform: translateX(calc(100% + 24px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.mytoast .toastcontent {
+  display: flex;
+  -moz-column-gap: 0.75rem;
+       column-gap: 0.75rem;
+  position: relative;
+}
+.mytoast .toastcontent .toasticon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 32px;
+}
+.mytoast .toastcontent .toasticon i {
+  font-size: 20px;
+}
+.mytoast .toastcontent .warningtoast {
+  background-color: #FFF9DB;
+  color: #FAB005;
+}
+.mytoast .toastcontent .errortoast {
+  background-color: #FFF5F5;
+  color: #FA5252;
+}
+.mytoast .toastcontent .successtoast {
+  background-color: #EBFBEE;
+  color: #40C057;
+}
+.mytoast .toastcontent .infotoast {
+  background-color: #E3FAFC;
+  color: #15AABF;
+}
+.mytoast .toastcontent .toastmessagecontainer .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+}
+.mytoast .toastcontent .toastmessagecontainer .message {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #495057;
+}
+.mytoast .toastcontent .toastclose {
+  cursor: pointer;
+}
+.mytoast--active {
+  transform: translateX(0%);
+}
+
+.ui-datepicker {
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.ui-datepicker .ui-datepicker-header {
+  display: flex;
+  -moz-column-gap: 36px;
+       column-gap: 36px;
+  align-items: center;
+}
+.ui-datepicker .ui-datepicker-header a {
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+  order: 1;
+  width: 16px;
+  height: 16px;
+  display: flex;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-prev .ui-icon.ui-icon-circle-triangle-w {
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 16px;
+  color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-image: url("../img/calender-left.svg");
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+  order: 2;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month,
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-year {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background-color: transparent;
+  color: #228BE6;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-title .ui-datepicker-month::after {
+  content: ",";
+}
+.ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+  order: 3;
+  width: 16px;
+  height: 16px;
+  display: flex;
+}
+.ui-datepicker .ui-datepicker-header .ui-icon.ui-icon-circle-triangle-e {
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 16px;
+  color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-image: url("../img/calender-right.svg");
+}
+.ui-datepicker .ui-datepicker-calendar {
+  width: 100%;
+  margin-top: 0.75rem;
+}
+.ui-datepicker .ui-datepicker-calendar thead {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #868E96;
+}
+.ui-datepicker .ui-datepicker-calendar thead tr {
+  height: 20px;
+  width: 20px;
+  text-align: center;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #212529;
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-calendar td span {
+  color: #868E96;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-week-end.ui-datepicker-days-cell-over.ui-datepicker-today,
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-days-cell-over.ui-datepicker-today,
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-current-day {
+  background-color: #4DABF7;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-week-end.ui-datepicker-days-cell-over.ui-datepicker-today a,
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-days-cell-over.ui-datepicker-today a,
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-current-day a {
+  color: #fff;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-today a {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #4DABF7;
+}
+
+.tooltip-container {
+  position: relative;
+}
+.tooltip-container .statistics-tooltip {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2d3748;
+  color: #fff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 3px 0 rgba(74, 85, 104, 0.16);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out;
+}
+.tooltip-container .statistics-tooltip::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translateX(-50%);
+  border: 15px solid;
+  border-color: #2d3748 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+.tooltip-container:hover .statistics-tooltip {
+  top: -290%;
+  opacity: 1;
+  visibility: visible;
+  width: -moz-max-content;
+  width: max-content;
+  font-size: 12px;
+}
+
+.table--data--stat {
+  display: flex;
+  justify-content: space-between;
+}
+.table--data--stat .table--stat {
+  border-radius: 24px;
+  padding: 0px 4px;
+  font-weight: 600;
+}
+.table--data--stat .table--stat--profit {
+  background: #D3F9D8;
+  color: #40C057;
+}
+.table--data--stat .table--stat--loss {
+  background: #FFE3E3;
+  color: #FA5252;
+}
+
+#delete-location-text {
+  row-gap: 12px;
+}
+
+.empty {
+  display: none;
+  width: 100%;
+  height: calc(71vh - 24px);
+  position: relative;
+}
+.empty .empty-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.empty .empty-wrapper .empty-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.empty .empty-wrapper .empty-text-info {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #868E96;
+  width: 32ch;
+  text-align: center;
+}
+
+.upload_state {
+  background-color: whitesmoke;
+  overflow: hidden;
+  position: relative;
+}
+
+.upload_state::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, transparent, transparent, #d7d7d7, transparent, transparent);
+  transform: translate(-100%);
+  animation: loading 1.2s infinite;
+}
+
+@keyframes loading {
+  100% {
+    transform: translate(100%);
+  }
+}
+.error_msg {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 2px;
+  color: red;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+.addupdatebtn:disabled {
+  background-color: grey;
+}
+
+.marker-wrapper {
+  display: inline-block;
+  border-radius: 50%;
+  padding: 4px;
+  background: transparent;
+  position: relative;
+  padding-bottom: 0;
+}
+.marker-wrapper .marker-gradient {
+  content: "";
+  position: absolute;
+  background: linear-gradient(135deg, #4dabf7 16.52%, #b5f2b2 95.98%);
+  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: ellipse(16px 42px at 50% 85%);
+          clip-path: ellipse(16px 42px at 50% 85%);
+}
+.marker-wrapper .map-marker {
+  width: 24px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  bottom: 0px;
+  position: relative;
+  text-align: center;
+  padding-top: 6px;
+}
+.marker-wrapper .map-marker::after {
+  content: "";
+  border: 8px solid;
+  border-color: #fff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.maincontainer {
+  background-color: #F5F5F5;
+  padding: 1.5rem;
+  position: relative;
+}
+.maincontainer .chargerstatus {
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.maincontainer .chargerstatus .chargerstatus-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.maincontainer .chargerstatus .chargerstatus-caption {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #868E96;
+  margin-top: 4px;
+}
+.maincontainer .chargerstatus .statusboxcontainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox {
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  width: calc(33.3333333333% - 11px);
+  cursor: pointer;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+  display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title i {
+  font-size: 20px;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #totalchargers-icon {
+  color: #228BE6;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #onlinechargers-icon {
+  color: #40C057;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #offlinecharger-icon {
+  color: #FA5252;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #plugedin-icon {
+  color: #FAB005;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #scheduled-icon {
+  color: #7950F2;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-title #charging-icon {
+  color: #15AABF;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-caption {
+  color: #868E96;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
+}
+.maincontainer .chargerstatus .statusboxcontainer .statusbox .statusbox-data {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 56px;
+  color: #343A40;
+}
+.maincontainer .mapsection {
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.maincontainer .mapsection .title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.maincontainer .mapsection .caption {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #868E96;
+}
+.maincontainer .mapsection .mapcontainer {
+  width: 100%;
+  height: 240px;
+  position: relative;
+  margin-top: 1rem;
+}
+.maincontainer .mapsection .mapcontainer #map {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+.maincontainer .mapsection .mapcontainer #map_place {
+  display: none;
+  background: #F8F9FA;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  width: 320px;
+  height: 40px;
+  padding: 12px 8px;
+}
+.maincontainer .mapsection .mapcontainer .fullscreenbackground,
+.maincontainer .mapsection .mapcontainer .fullscreenbackground_exit {
+  background-color: white;
+  border: 1px solid #DEE2E6;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  top: 0px;
+  flex: 0 0 auto;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.maincontainer .mapsection .mapcontainer .fullscreenbackground {
+  margin: 16px;
+  right: 0px;
+}
+.maincontainer .mapsection .mapcontainer .fullscreenbackground_exit {
+  left: 24px;
+  margin-top: 36px;
+  display: none;
+}
+.maincontainer .mapsection .mapcontainer .uil-expand-arrows,
+.maincontainer .mapsection .mapcontainer .uil-angle-left-b {
+  font-size: 24px;
+  color: #4DABF7;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter {
+  height: 40px;
+  width: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .bi-circle-fill {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 10px;
+  color: #5C7CFA;
+  display: none;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu {
+  background: #F5F5F5;
+  border: 1px solid #CED4DA;
+  box-shadow: 0px 10px 16px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  width: 480px;
+  height: auto;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  row-gap: 2px;
+  cursor: auto;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_menu_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_menu_header .title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #212529;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .activated_filter_section {
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+  box-shadow: 0px 1px 12px -3px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .activated_filter_section .activated_filter {
+  background: #E7F5FF;
+  border: 1px solid #4DABF7;
+  border-radius: 24px;
+  display: none;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 12px;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .activated_filter_section .activated_filter .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #212529;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .activated_filter_section .activated_filter .disable-filter {
+  cursor: pointer;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .activated_filter_section .activated_filter .disable-filter::before {
+  content: "✖";
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section {
+  display: flex;
+  height: 100%;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_category {
+  background-color: white;
+  padding: 1rem;
+  width: 50%;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_category .filter_type {
+  padding: 8px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+  background: #E9ECEF;
+  border-radius: 8px;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists {
+  padding: 1rem;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists .filter_status {
+  display: flex;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists .filter_status .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000000;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists .filter_status .filter_checkbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+  font: inherit;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #212529;
+  border-radius: 4px;
+  display: grid;
+  place-content: center;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists .filter_status .filter_checkbox::before {
+  content: "✓";
+  width: 20px;
+  height: 20px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  border-radius: 4px;
+  transform-origin: center;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_main_section .filter_lists .filter_status .filter_checkbox:checked::before {
+  display: grid;
+  place-content: center;
+  transform: scale(1);
+  background-color: #4DABF7;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_actions {
+  display: flex;
+  background-color: white;
+  padding: 1rem;
+  justify-content: flex-end;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_actions .apply_button {
+  background-color: #4DABF7;
+  color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 24px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  border-radius: 32px;
+}
+.maincontainer .mapsection .mapcontainer .connector_filter .connector_filter_menu .filter_actions .clearall_filters {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 8px 24px;
+  background: #E9ECEF;
+  border: 1px solid #CED4DA;
+  border-radius: 32px;
+}
+.maincontainer .horizonaldivider {
+  background-color: #F5F5F5;
+  width: 100%;
+  margin: 1.5rem 0 1rem 0;
+  border: 1px solid #CED4DA;
+}
+.maincontainer .filtercontainer {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  justify-content: flex-end;
+}
+.maincontainer .filtercontainer .restart,
+.maincontainer .filtercontainer .connector_filter {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.maincontainer .statisticslocationcontainer,
+.maincontainer .chartscontainer {
+  display: flex;
+  margin-top: 1.5rem;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer,
+.maincontainer .chartscontainer .statisticscontainer {
+  padding: 1rem;
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  width: 50%;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .title,
+.maincontainer .chartscontainer .statisticscontainer .title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .caption,
+.maincontainer .chartscontainer .statisticscontainer .caption {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #868E96;
+  margin-top: 4px;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox {
+  width: calc(50% - 0.5rem);
+  background: #FFFFFF;
+  border: 1px solid #CED4DA;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .title,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .title {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #212529;
+  display: flex;
+  -moz-column-gap: 11px;
+       column-gap: 11px;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .title i,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .title i {
+  color: #228BE6;
+  font-size: 20px;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .statisticsdata,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .statisticsdata {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  color: #343A40;
+  display: flex;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  align-items: baseline;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .statisticsdata .energyunit,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .statisticsdata .energyunit {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #868E96;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .profitloss,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .profitloss {
+  padding: 4px;
+  border-radius: 24px;
+  color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .profitgreen,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .profitgreen {
+  background: #51CF66;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .lossred,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .lossred {
+  background: #FF6B6B;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .statisticslabel,
+.maincontainer .chartscontainer .statisticscontainer .statisticsgroup .statisticsbox .prevdata .statisticslabel {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #868E96;
+}
+.maincontainer .statisticslocationcontainer .statisticscontainer .locationchartcontainer,
+.maincontainer .statisticslocationcontainer .statisticscontainer .sessionchartcontainer,
+.maincontainer .statisticslocationcontainer .statisticscontainer .energychartcontainer,
+.maincontainer .chartscontainer .statisticscontainer .locationchartcontainer,
+.maincontainer .chartscontainer .statisticscontainer .sessionchartcontainer,
+.maincontainer .chartscontainer .statisticscontainer .energychartcontainer {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+a[href^="http://maps.google.com/maps"] {
+  display: none !important;
+}
+
+a[href^="https://maps.google.com/maps"] {
+  display: none !important;
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+  display: none;
+}
+
+.gmnoprint div {
+  background: none !important;
+}
+
+.gm-style-iw-c {
+  padding: 0px !important;
+  border-radius: 25px !important;
+}
+
+.gm-ui-hover-effect {
+  display: none !important;
+}
+
+#map > div > .pac-container {
+  top: 58px !important;
+}
+
+.infowindow {
+  width: 400px;
+  background-color: white;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid #CED4DA;
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  row-gap: 16px;
+}
+.infowindow .iw-header {
+  display: flex;
+  justify-content: space-between;
+}
+.infowindow .iw-header .iw-headercontent {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.infowindow .iw-header .iw-headercontent .headericon {
+  width: 40px;
+}
+.infowindow .iw-header .iw-headercontent .headertinfocontainer .title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #212529;
+  text-transform: capitalize;
+}
+.infowindow .iw-header .iw-headercontent .headertinfocontainer .info {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  color: #868E96;
+}
+.infowindow .iw-header .uil-multiply {
+  font-size: 24px;
+  cursor: pointer;
+}
+.infowindow .info-divider {
+  border: 1px solid #CED4DA;
+  width: 100%;
+}
+.infowindow .iw-chargers-container {
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+.infowindow .iw-chargers-container .iw-chargers {
+  background: #FFFFFF;
+  border: 1px solid #DEE2E6;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.infowindow .iw-chargers-container .iw-chargers .iw-chargerinfo {
+  display: flex;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
+}
+.infowindow .iw-chargers-container .iw-chargers .iw-chargerinfo .chargerinfo .title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2D3748;
+  text-transform: uppercase;
+}
+.infowindow .iw-chargers-container .iw-chargers .iw-chargerinfo .chargerinfo .status {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #495057;
+}
+.infowindow .location_info {
+  font-size: 14px;
+  color: #228BE6;
+  display: flex;
+  justify-content: flex-end;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  align-items: center;
+}
+.infowindow .location_info .title {
+  font-size: 14px;
+  color: #228BE6;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+}
+.infowindow .location_info .uil-angle-right {
+  cursor: pointer;
+}/*# sourceMappingURL=dashboard.css.map */

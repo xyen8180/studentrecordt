@@ -1,0 +1,45 @@
+<div class="chargertable">
+    <table>
+        <tr>
+            <th style="width: 10%;">Roll No.</th>
+            <th style="width: 10%;">Name</th>
+            <th style="width: 10%;">Class</th>
+            <th style="width: 10%;">Subject 1</th>
+            <th style="width: 10%;">Subject 2</th>
+            <th style="width: 10%;">Subject 3</th>
+            <th style="width: 10%;">Subject 4</th>
+            <th style="width: 10%;">Subject 5</th>
+            <th style="width: 10%;">Total</th>
+            <th style="width: 10%;">Action</th>
+        </tr>
+        <tbody id="tbody">
+            <tr>
+                <td>100090792</td>
+                <td>abc</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>12</td>
+                <td>
+                    <div onclick="qr_generator(event)" class="qr_icon">
+                        <i class="uil uil-download-alt"></i>
+                        <i class="uil uil-download-alt"></i>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tr>
+            <td colspan="10" style="padding: 0;">
+                <div class="tablefooter">
+                    <div class="footerdata">1-12<span> of </span>32</div>
+                    <i data-value='1' class="uil uil-angle-left-b"></i>
+                    <i data-value='2' class="uil uil-angle-right-b"></i>
+                </div>
+            </td>
+        </tr>
+    </table>
+    {% extends 'empty_screen.html' %}
+</div>
